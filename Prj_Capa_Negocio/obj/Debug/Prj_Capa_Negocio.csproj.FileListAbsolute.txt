@@ -1,0 +1,9 @@
+c:\users\mario\documents\visual studio 2015\Projects\Sln_AsistenciaSalud\Prj_Capa_Negocio\bin\Debug\Prj_Capa_Negocio.dll
+c:\users\mario\documents\visual studio 2015\Projects\Sln_AsistenciaSalud\Prj_Capa_Negocio\bin\Debug\Prj_Capa_Negocio.pdb
+c:\users\mario\documents\visual studio 2015\Projects\Sln_AsistenciaSalud\Prj_Capa_Negocio\bin\Debug\Prj_Capa_Datos.dll
+c:\users\mario\documents\visual studio 2015\Projects\Sln_AsistenciaSalud\Prj_Capa_Negocio\bin\Debug\Prj_Capa_Entidad.dll
+c:\users\mario\documents\visual studio 2015\Projects\Sln_AsistenciaSalud\Prj_Capa_Negocio\bin\Debug\Prj_Capa_Datos.pdb
+c:\users\mario\documents\visual studio 2015\Projects\Sln_AsistenciaSalud\Prj_Capa_Negocio\bin\Debug\Prj_Capa_Entidad.pdb
+c:\users\mario\documents\visual studio 2015\Projects\Sln_AsistenciaSalud\Prj_Capa_Negocio\obj\Debug\Prj_Capa_Negocio.csprojResolveAssemblyReference.cache
+c:\users\mario\documents\visual studio 2015\Projects\Sln_AsistenciaSalud\Prj_Capa_Negocio\obj\Debug\Prj_Capa_Negocio.dll
+c:\users\mario\documents\visual studio 2015\Projects\Sln_AsistenciaSalud\Prj_Capa_Negocio\obj\Debug\Prj_Capa_Negocio.pdb
