@@ -6,9 +6,10 @@ using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Prj_Capa_Negocio;
+using MetroFramework.Forms;
 
 namespace AsistenciaSalud
 {
@@ -17,8 +18,11 @@ namespace AsistenciaSalud
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
-        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
 
+       
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+        int total_intentos = 0;
+        String nombre, id,issuper,clue;
         public Form_Login()
         {
             InitializeComponent();
@@ -50,42 +54,99 @@ namespace AsistenciaSalud
 
         private bool ValidarTextBox()
         {
-            if(txt_user.Text.Trim().Length == 0) { MessageBox.Show("Debe de ingresar el usuario", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); txt_user.Focus(); return false; }
-            if (txt_pass.Text.Trim().Length == 0) { MessageBox.Show("Debe de ingresar la contraseña", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); txt_pass.Focus(); return false; }
-            return true;
+            try
+            {
+                if (txt_user.Text.Trim().Length == 0)
+                {
+                    MetroFramework.MetroMessageBox.Show(this, "Debe de ingresar el usuario", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    txt_user.Focus();
+                    return false;
+                }
+
+                if (txt_pass.Text.Trim().Length == 0)
+                {
+                    MetroFramework.MetroMessageBox.Show(this, "Debe de ingresar la contraseña", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    txt_pass.Focus();
+                    return false;
+                }
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MetroFramework.MetroMessageBox.Show(this,ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+
+
+            }
         }
 
         private void AccederAlSistema()
         {
-            RN_Usuario obj = new RN_Usuario();
-            DataTable dt = new DataTable();
-
-            int total_intentos = 0;
-            string usuario, password;
-
-            if(ValidarTextBox() == false)
+            try
             {
-                return;
-            }
-            usuario = txt_user.Text.Trim();
-            password = txt_pass.Text.Trim();
 
-            if(obj.RN_Verificar_Acceso(usuario, password) == true)
-            {
-                MessageBox.Show("Bienvenido al sistema", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                MessageBox.Show("Usuario y/o contraseña invalidos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                total_intentos++;
-                txt_user.Focus();
-                if(total_intentos == 3) {
-                    Application.Exit();
-                    MessageBox.Show("El no maximo de intentos ha sido superado", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                DataTable dt = new DataTable();
+                Datos.DatosMaestro consultar = new Datos.DatosMaestro();
+
+
+                if (ValidarTextBox())
+                {
+                    dt = consultar.ConsultarUsuario(txt_user.Text.Trim(), txt_pass.Text.Trim());
+
+                    if (dt.Rows.Count > 0)
+                    {
+                        nombre = dt.Rows[0]["nombre"].ToString() + " " + dt.Rows[0]["apellido_paterno"].ToString() + " " + dt.Rows[0]["apellido_materno"].ToString();
+                        id = dt.Rows[0]["id"].ToString();
+                        issuper = dt.Rows[0]["is_superuser"].ToString();
+                        clue = dt.Rows[0]["Clue"].ToString();
+                        if (clue == "" || clue == null)
+                        {
+                            MetroFramework.MetroMessageBox.Show(this, "Es necesario que este asignado a una clue", "Fallo de inicio de sesion", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            return;
+                        }
+                        else
+                        {
+                            Thread principal = new Thread(run);
+                            this.Close();
+                            principal.SetApartmentState(System.Threading.ApartmentState.STA);
+                            principal.Start();
+                        }
+                    }
+
+                    else
+                    {
+                        MetroFramework.MetroMessageBox.Show(this, "Usuario y/o contraseña invalidos", "Fallo de inicio de sesion", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                        total_intentos++;
+                        txt_user.Focus();
+                        if (total_intentos == 3)
+                        {
+                            MetroFramework.MetroMessageBox.Show(this, "El no maximo de intentos ha sido superado", "Fallo de inicio de sesion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                            Application.Exit();
+
+
+                        }
+                    }
                 }
             }
+            catch (Exception ex)
+            {
+                MetroFramework.MetroMessageBox.Show(this, ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+
+
         }
 
-        
+        private void run()
+        {
+            Principal pantalla = new Principal(nombre,clue,id,issuper);
+            pantalla.ShowDialog();
+
+        }
+
+
     }
 }

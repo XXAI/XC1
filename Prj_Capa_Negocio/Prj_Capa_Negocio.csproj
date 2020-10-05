@@ -44,16 +44,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RN_Usuario.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Prj_Capa_Datos\Prj_Capa_Datos.csproj">
-      <Project>{006cbd5e-71cc-4cb9-9d6d-9dd41e26add4}</Project>
-      <Name>Prj_Capa_Datos</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Prj_Capa_Entidad\Prj_Capa_Entidad.csproj">
-      <Project>{8af79779-8db0-4b6d-b8da-8871660cfe6d}</Project>
-      <Name>Prj_Capa_Entidad</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
