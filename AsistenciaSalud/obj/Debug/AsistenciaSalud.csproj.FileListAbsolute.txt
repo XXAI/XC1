@@ -33,3 +33,19 @@ D:\Visual Studio\XC1\AsistenciaSalud\obj\Debug\AsistenciaSalud.exe
 D:\Visual Studio\XC1\AsistenciaSalud\obj\Debug\AsistenciaSalud.pdb
 D:\Visual Studio\XC1\AsistenciaSalud\obj\Debug\AsistenciaSalud.csprojAssemblyReference.cache
 D:\Visual Studio\XC1\AsistenciaSalud\obj\Debug\AsistenciaSalud.Permisos.resources
+C:\Users\mike\Documents\huellas\XC1\AsistenciaSalud\bin\Debug\AsistenciaSalud.exe.config
+C:\Users\mike\Documents\huellas\XC1\AsistenciaSalud\bin\Debug\AsistenciaSalud.exe
+C:\Users\mike\Documents\huellas\XC1\AsistenciaSalud\bin\Debug\AsistenciaSalud.pdb
+C:\Users\mike\Documents\huellas\XC1\AsistenciaSalud\bin\Debug\MetroFramework.Design.dll
+C:\Users\mike\Documents\huellas\XC1\AsistenciaSalud\bin\Debug\MetroFramework.dll
+C:\Users\mike\Documents\huellas\XC1\AsistenciaSalud\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\mike\Documents\huellas\XC1\AsistenciaSalud\obj\Debug\AsistenciaSalud.fom_message.filtro_form.resources
+C:\Users\mike\Documents\huellas\XC1\AsistenciaSalud\obj\Debug\AsistenciaSalud.Form_Login.resources
+C:\Users\mike\Documents\huellas\XC1\AsistenciaSalud\obj\Debug\AsistenciaSalud.Permisos.resources
+C:\Users\mike\Documents\huellas\XC1\AsistenciaSalud\obj\Debug\AsistenciaSalud.Principal.resources
+C:\Users\mike\Documents\huellas\XC1\AsistenciaSalud\obj\Debug\AsistenciaSalud.Properties.Resources.resources
+C:\Users\mike\Documents\huellas\XC1\AsistenciaSalud\obj\Debug\AsistenciaSalud.csproj.GenerateResource.cache
+C:\Users\mike\Documents\huellas\XC1\AsistenciaSalud\obj\Debug\AsistenciaSalud.csproj.CoreCompileInputs.cache
+C:\Users\mike\Documents\huellas\XC1\AsistenciaSalud\obj\Debug\AsistenciaSalud.csproj.CopyComplete
+C:\Users\mike\Documents\huellas\XC1\AsistenciaSalud\obj\Debug\AsistenciaSalud.exe
+C:\Users\mike\Documents\huellas\XC1\AsistenciaSalud\obj\Debug\AsistenciaSalud.pdb

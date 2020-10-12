@@ -16,6 +16,7 @@ namespace AsistenciaSalud
         String nombre, id,clue;
         bool  isroot;
         private Form _FormularioSecundario;
+        
         public Principal(String name, String clues, String ids, string issuper)
         {
             InitializeComponent();
@@ -35,7 +36,7 @@ namespace AsistenciaSalud
         {
             _FormularioSecundario = new Permisos();
             Thread principal = new Thread(run);
-            this.Close();
+            //this.Close();
             principal.SetApartmentState(System.Threading.ApartmentState.STA);
             principal.Start();
 

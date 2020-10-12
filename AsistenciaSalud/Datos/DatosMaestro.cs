@@ -24,7 +24,7 @@ namespace AsistenciaSalud.Datos
                     foreach (ConnectionStringSettings cs in settings)
                     {
 
-                        if (cs.Name == "AsistenciaSalud.Properties.Settings.Maestro")
+                        if (cs.Name == "AsistenciaSalud.Properties.Settings.Maestra")
                         {
                             cadenaConeccion = cs.ConnectionString;
                         }
