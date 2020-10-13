@@ -60,6 +60,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChecadorMaestraDataSetClues.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ChecadorMaestraDataSetClues.xsd</DependentUpon>
+    </Compile>
     <Compile Include="ChecadorMaestraDataSetPermisos.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -69,6 +74,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ChecadorMaestraDataSetUsuarios.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Clues.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clues.Designer.cs">
+      <DependentUpon>Clues.cs</DependentUpon>
     </Compile>
     <Compile Include="Datos\DatosClue.cs" />
     <Compile Include="Datos\DatosMaestro.cs" />
@@ -105,6 +116,9 @@
     <Compile Include="Usuarios.Designer.cs">
       <DependentUpon>Usuarios.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Clues.resx">
+      <DependentUpon>Clues.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fom_message\filtro_form.resx">
       <DependentUpon>filtro_form.cs</DependentUpon>
     </EmbeddedResource>
@@ -130,6 +144,17 @@
     <EmbeddedResource Include="Usuarios.resx">
       <DependentUpon>Usuarios.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="ChecadorMaestraDataSetClues.xsc">
+      <DependentUpon>ChecadorMaestraDataSetClues.xsd</DependentUpon>
+    </None>
+    <None Include="ChecadorMaestraDataSetClues.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ChecadorMaestraDataSetClues.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ChecadorMaestraDataSetClues.xss">
+      <DependentUpon>ChecadorMaestraDataSetClues.xsd</DependentUpon>
+    </None>
     <None Include="ChecadorMaestraDataSetPermisos.xsc">
       <DependentUpon>ChecadorMaestraDataSetPermisos.xsd</DependentUpon>
     </None>

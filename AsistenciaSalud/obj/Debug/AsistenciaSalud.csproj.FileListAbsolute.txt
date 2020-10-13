@@ -51,3 +51,4 @@ D:\Visual Studio\XC1\AsistenciaSalud\obj\Debug\AsistenciaSalud.exe
 D:\Visual Studio\XC1\AsistenciaSalud\obj\Debug\AsistenciaSalud.pdb
 D:\Visual Studio\XC1\AsistenciaSalud\obj\Debug\AsistenciaSalud.csprojAssemblyReference.cache
 D:\Visual Studio\XC1\AsistenciaSalud\obj\Debug\AsistenciaSalud.csproj.CoreCompileInputs.cache
+D:\Visual Studio\XC1\AsistenciaSalud\obj\Debug\AsistenciaSalud.Clues.resources

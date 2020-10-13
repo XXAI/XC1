@@ -56,9 +56,9 @@
             this.mtxtpermiso = new MetroFramework.Controls.MetroTextBox();
             this.permissionsTableAdapter = new AsistenciaSalud.ChecadorMaestraDataSetPermisosTableAdapters.permissionsTableAdapter();
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
@@ -104,7 +104,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 42.04171F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 57.95829F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 97F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 99F));
             this.tableLayoutPanel1.Controls.Add(this.pnmenu, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.mpnbusqueda, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.mpncuerpo, 1, 0);
@@ -126,7 +126,7 @@
             this.pnmenu.Controls.Add(this.mleliminar);
             this.pnmenu.Controls.Add(this.mlmodificar);
             this.pnmenu.Controls.Add(this.mlagregar);
-            this.pnmenu.Location = new System.Drawing.Point(683, 3);
+            this.pnmenu.Location = new System.Drawing.Point(681, 3);
             this.pnmenu.Name = "pnmenu";
             this.pnmenu.Size = new System.Drawing.Size(85, 481);
             this.pnmenu.TabIndex = 35;
@@ -168,7 +168,7 @@
             this.mpnbusqueda.HorizontalScrollbarSize = 10;
             this.mpnbusqueda.Location = new System.Drawing.Point(3, 3);
             this.mpnbusqueda.Name = "mpnbusqueda";
-            this.mpnbusqueda.Size = new System.Drawing.Size(280, 481);
+            this.mpnbusqueda.Size = new System.Drawing.Size(279, 481);
             this.mpnbusqueda.TabIndex = 0;
             this.mpnbusqueda.VerticalScrollbarBarColor = true;
             this.mpnbusqueda.VerticalScrollbarHighlightOnWheel = false;
@@ -226,7 +226,7 @@
             this.mgpermisos.RowHeadersWidth = 51;
             this.mgpermisos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.mgpermisos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.mgpermisos.Size = new System.Drawing.Size(280, 481);
+            this.mgpermisos.Size = new System.Drawing.Size(279, 481);
             this.mgpermisos.TabIndex = 2;
             // 
             // Column2
@@ -270,9 +270,9 @@
             this.mpncuerpo.HorizontalScrollbarBarColor = true;
             this.mpncuerpo.HorizontalScrollbarHighlightOnWheel = false;
             this.mpncuerpo.HorizontalScrollbarSize = 10;
-            this.mpncuerpo.Location = new System.Drawing.Point(289, 3);
+            this.mpncuerpo.Location = new System.Drawing.Point(288, 3);
             this.mpncuerpo.Name = "mpncuerpo";
-            this.mpncuerpo.Size = new System.Drawing.Size(388, 481);
+            this.mpncuerpo.Size = new System.Drawing.Size(387, 481);
             this.mpncuerpo.TabIndex = 1;
             this.mpncuerpo.VerticalScrollbarBarColor = true;
             this.mpncuerpo.VerticalScrollbarHighlightOnWheel = false;
@@ -426,6 +426,13 @@
             this.bindingNavigator1.TabIndex = 22;
             this.bindingNavigator1.Text = "bindingNavigator1";
             // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 22);
+            this.bindingNavigatorCountItem.Text = "de {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Número total de elementos";
+            // 
             // bindingNavigatorSeparator
             // 
             this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
@@ -441,21 +448,14 @@
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Posición actual";
             // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 22);
-            this.bindingNavigatorCountItem.Text = "de {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Número total de elementos";
-            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
             this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
             // toolStripLabel1
