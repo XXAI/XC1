@@ -73,6 +73,87 @@ namespace AsistenciaSalud.Datos
             }
         }
 
+        public int EliminarPermiso(String id)
+        {
+            SqlCommand cmd = new SqlCommand();
+
+            cmd.Parameters.AddWithValue("@id", id);
+
+            string cadenasql = "EliminarPermiso";
+
+            cmd.CommandText = cadenasql;
+            cmd.Connection = conexion;
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            int dato = Convert.ToInt32(cmd.ExecuteNonQuery());
+            cmd.Dispose();
+            return dato;
+        }
+
+        public int InsertarPermiso(String idpermiso, String descripcion, String grupo)
+        {
+            try
+            {
+
+                SqlCommand cmd = new SqlCommand();
+                SqlDataAdapter adapter = new SqlDataAdapter();
+
+                cmd.Parameters.AddWithValue("@id", idpermiso);
+                cmd.Parameters.AddWithValue("@descripcion",descripcion);
+                cmd.Parameters.AddWithValue("@rupo", grupo);
+                
+
+
+                String cadenasql = "InsertarPermiso";
+                cmd.Connection = conexion;
+                cmd.CommandText = cadenasql;
+                cmd.CommandType = CommandType.StoredProcedure;
+
+
+                adapter.SelectCommand = cmd;
+                int dato = Convert.ToInt32(cmd.ExecuteNonQuery());
+                cmd.Dispose();
+                return dato;
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
+        }
+
+        public int ModificarPermiso(String idpermiso, String descripcion, String grupo)
+        {
+            try
+            {
+
+                SqlCommand cmd = new SqlCommand();
+                SqlDataAdapter adapter = new SqlDataAdapter();
+
+                cmd.Parameters.AddWithValue("@id", idpermiso);
+                cmd.Parameters.AddWithValue("@descripcion", descripcion);
+                cmd.Parameters.AddWithValue("@grupo", grupo);
+
+
+
+                String cadenasql = "ModificarPermiso";
+                cmd.Connection = conexion;
+                cmd.CommandText = cadenasql;
+                cmd.CommandType = CommandType.StoredProcedure;
+
+
+                adapter.SelectCommand = cmd;
+                int dato = Convert.ToInt32(cmd.ExecuteNonQuery());
+                cmd.Dispose();
+                return dato;
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
+        }
+
         public string hash(string password)
         {
 

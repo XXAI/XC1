@@ -281,13 +281,13 @@ namespace AsistenciaSalud {
             
             private global::System.Data.DataColumn columnid;
             
-            private global::System.Data.DataColumn columndescription;
-            
-            private global::System.Data.DataColumn columngroup;
-            
             private global::System.Data.DataColumn columnis_super;
             
             private global::System.Data.DataColumn columncreated_at;
+            
+            private global::System.Data.DataColumn columndescripcion;
+            
+            private global::System.Data.DataColumn columngrupo;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -332,22 +332,6 @@ namespace AsistenciaSalud {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn descriptionColumn {
-                get {
-                    return this.columndescription;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn groupColumn {
-                get {
-                    return this.columngroup;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn is_superColumn {
                 get {
                     return this.columnis_super;
@@ -359,6 +343,22 @@ namespace AsistenciaSalud {
             public global::System.Data.DataColumn created_atColumn {
                 get {
                     return this.columncreated_at;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn descripcionColumn {
+                get {
+                    return this.columndescripcion;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn grupoColumn {
+                get {
+                    return this.columngrupo;
                 }
             }
             
@@ -399,14 +399,14 @@ namespace AsistenciaSalud {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public permissionsRow AddpermissionsRow(string id, string description, string group, bool is_super, byte[] created_at) {
+            public permissionsRow AddpermissionsRow(string id, bool is_super, byte[] created_at, string descripcion, string grupo) {
                 permissionsRow rowpermissionsRow = ((permissionsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
-                        description,
-                        group,
                         is_super,
-                        created_at};
+                        created_at,
+                        descripcion,
+                        grupo};
                 rowpermissionsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowpermissionsRow);
                 return rowpermissionsRow;
@@ -437,10 +437,10 @@ namespace AsistenciaSalud {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
                 this.columnid = base.Columns["id"];
-                this.columndescription = base.Columns["description"];
-                this.columngroup = base.Columns["group"];
                 this.columnis_super = base.Columns["is_super"];
                 this.columncreated_at = base.Columns["created_at"];
+                this.columndescripcion = base.Columns["descripcion"];
+                this.columngrupo = base.Columns["grupo"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -448,22 +448,22 @@ namespace AsistenciaSalud {
             private void InitClass() {
                 this.columnid = new global::System.Data.DataColumn("id", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid);
-                this.columndescription = new global::System.Data.DataColumn("description", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columndescription);
-                this.columngroup = new global::System.Data.DataColumn("group", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columngroup);
                 this.columnis_super = new global::System.Data.DataColumn("is_super", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnis_super);
                 this.columncreated_at = new global::System.Data.DataColumn("created_at", typeof(byte[]), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncreated_at);
+                this.columndescripcion = new global::System.Data.DataColumn("descripcion", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndescripcion);
+                this.columngrupo = new global::System.Data.DataColumn("grupo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columngrupo);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid}, true));
                 this.columnid.AllowDBNull = false;
                 this.columnid.Unique = true;
                 this.columnid.MaxLength = 255;
-                this.columndescription.MaxLength = 255;
-                this.columngroup.MaxLength = 255;
                 this.columncreated_at.ReadOnly = true;
+                this.columndescripcion.MaxLength = 255;
+                this.columngrupo.MaxLength = 255;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -617,38 +617,6 @@ namespace AsistenciaSalud {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string description {
-                get {
-                    try {
-                        return ((string)(this[this.tablepermissions.descriptionColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'description\' de la tabla \'permissions\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablepermissions.descriptionColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string group {
-                get {
-                    try {
-                        return ((string)(this[this.tablepermissions.groupColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'group\' de la tabla \'permissions\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablepermissions.groupColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool is_super {
                 get {
                     try {
@@ -681,26 +649,34 @@ namespace AsistenciaSalud {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsdescriptionNull() {
-                return this.IsNull(this.tablepermissions.descriptionColumn);
+            public string descripcion {
+                get {
+                    try {
+                        return ((string)(this[this.tablepermissions.descripcionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'descripcion\' de la tabla \'permissions\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablepermissions.descripcionColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetdescriptionNull() {
-                this[this.tablepermissions.descriptionColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsgroupNull() {
-                return this.IsNull(this.tablepermissions.groupColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetgroupNull() {
-                this[this.tablepermissions.groupColumn] = global::System.Convert.DBNull;
+            public string grupo {
+                get {
+                    try {
+                        return ((string)(this[this.tablepermissions.grupoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'grupo\' de la tabla \'permissions\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablepermissions.grupoColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -725,6 +701,30 @@ namespace AsistenciaSalud {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setcreated_atNull() {
                 this[this.tablepermissions.created_atColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsdescripcionNull() {
+                return this.IsNull(this.tablepermissions.descripcionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetdescripcionNull() {
+                this[this.tablepermissions.descripcionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsgrupoNull() {
+                return this.IsNull(this.tablepermissions.grupoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetgrupoNull() {
+                this[this.tablepermissions.grupoColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -888,37 +888,37 @@ namespace AsistenciaSalud.ChecadorMaestraDataSetPermisosTableAdapters {
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "permissions";
             tableMapping.ColumnMappings.Add("id", "id");
-            tableMapping.ColumnMappings.Add("description", "description");
-            tableMapping.ColumnMappings.Add("group", "group");
             tableMapping.ColumnMappings.Add("is_super", "is_super");
             tableMapping.ColumnMappings.Add("created_at", "created_at");
+            tableMapping.ColumnMappings.Add("descripcion", "descripcion");
+            tableMapping.ColumnMappings.Add("grupo", "grupo");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[permissions] WHERE (([id] = @Original_id) AND ((@IsNull_create" +
-                "d_at = 1 AND [created_at] IS NULL) OR ([created_at] = @Original_created_at)))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [permissions] WHERE (([id] = @Original_id) AND ((@IsNull_created_at =" +
+                " 1 AND [created_at] IS NULL) OR ([created_at] = @Original_created_at)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_created_at", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "created_at", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_created_at", global::System.Data.SqlDbType.Timestamp, 0, global::System.Data.ParameterDirection.Input, 0, 0, "created_at", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[permissions] ([id], [description], [group], [is_super]) VALUES" +
-                " (@id, @description, @group, @is_super);\r\nSELECT id, description, [group], is_su" +
-                "per, created_at FROM permissions WHERE (id = @id)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [permissions] ([id], [descripcion], [grupo], [is_super]) VALUES (@id," +
+                " @descripcion, @grupo, @is_super);\r\nSELECT id, descripcion, grupo, is_super, cre" +
+                "ated_at FROM permissions WHERE (id = @id)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@description", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "description", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@group", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "group", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@descripcion", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "descripcion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@grupo", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "grupo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@is_super", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "is_super", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[permissions] SET [id] = @id, [description] = @description, [group] = @group, [is_super] = @is_super WHERE (([id] = @Original_id) AND ((@IsNull_created_at = 1 AND [created_at] IS NULL) OR ([created_at] = @Original_created_at)));
-SELECT id, description, [group], is_super, created_at FROM permissions WHERE (id = @id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [permissions] SET [id] = @id, [descripcion] = @descripcion, [grupo] = @grupo, [is_super] = @is_super WHERE (([id] = @Original_id) AND ((@IsNull_created_at = 1 AND [created_at] IS NULL) OR ([created_at] = @Original_created_at)));
+SELECT id, descripcion, grupo, is_super, created_at FROM permissions WHERE (id = @id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@description", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "description", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@group", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "group", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@descripcion", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "descripcion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@grupo", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "grupo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@is_super", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "is_super", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_created_at", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "created_at", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -938,7 +938,8 @@ SELECT id, description, [group], is_super, created_at FROM permissions WHERE (id
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT id, description, [group], is_super, created_at FROM dbo.permissions";
+            this._commandCollection[0].CommandText = "SELECT        id, descripcion, grupo, is_super, created_at\r\nFROM            permi" +
+                "ssions";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1034,24 +1035,24 @@ SELECT id, description, [group], is_super, created_at FROM permissions WHERE (id
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string id, string description, string group, global::System.Nullable<bool> is_super) {
+        public virtual int Insert(string id, string descripcion, string grupo, global::System.Nullable<bool> is_super) {
             if ((id == null)) {
                 throw new global::System.ArgumentNullException("id");
             }
             else {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((string)(id));
             }
-            if ((description == null)) {
+            if ((descripcion == null)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(description));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(descripcion));
             }
-            if ((group == null)) {
+            if ((grupo == null)) {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(group));
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(grupo));
             }
             if ((is_super.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[3].Value = ((bool)(is_super.Value));
@@ -1079,24 +1080,24 @@ SELECT id, description, [group], is_super, created_at FROM permissions WHERE (id
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string id, string description, string group, global::System.Nullable<bool> is_super, string Original_id, byte[] Original_created_at) {
+        public virtual int Update(string id, string descripcion, string grupo, global::System.Nullable<bool> is_super, string Original_id, byte[] Original_created_at) {
             if ((id == null)) {
                 throw new global::System.ArgumentNullException("id");
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(id));
             }
-            if ((description == null)) {
+            if ((descripcion == null)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(description));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(descripcion));
             }
-            if ((group == null)) {
+            if ((grupo == null)) {
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(group));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(grupo));
             }
             if ((is_super.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[3].Value = ((bool)(is_super.Value));
@@ -1138,8 +1139,8 @@ SELECT id, description, [group], is_super, created_at FROM permissions WHERE (id
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string description, string group, global::System.Nullable<bool> is_super, string Original_id, byte[] Original_created_at) {
-            return this.Update(Original_id, description, group, is_super, Original_id, Original_created_at);
+        public virtual int Update(string descripcion, string grupo, global::System.Nullable<bool> is_super, string Original_id, byte[] Original_created_at) {
+            return this.Update(Original_id, descripcion, grupo, is_super, Original_id, Original_created_at);
         }
     }
     
