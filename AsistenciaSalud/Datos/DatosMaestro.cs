@@ -41,6 +41,7 @@ namespace AsistenciaSalud.Datos
             }
         }
 
+        #region usuarios
         public DataTable ConsultarUsuario(String usuario, string password)
         {
             try
@@ -73,6 +74,107 @@ namespace AsistenciaSalud.Datos
             }
         }
 
+        public int EliminarUsuario(String id)
+        {
+            SqlCommand cmd = new SqlCommand();
+
+            cmd.Parameters.AddWithValue("@id",Convert.ToInt32( id));
+
+            string cadenasql = "EliminarUsuario";
+
+            cmd.CommandText = cadenasql;
+            cmd.Connection = conexion;
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            int dato = Convert.ToInt32(cmd.ExecuteNonQuery());
+            cmd.Dispose();
+            return dato;
+        }
+
+        public int InsertarUsuario(String username, String password, String email,string nombre,string apellidopaterno,string apellidomaterno, string alias, bool activo, string clue)
+        {
+            try
+            {
+
+                SqlCommand cmd = new SqlCommand();
+                SqlDataAdapter adapter = new SqlDataAdapter();
+
+                cmd.Parameters.AddWithValue("@username", username);
+                cmd.Parameters.AddWithValue("@password", hash(password));
+                cmd.Parameters.AddWithValue("@email", email);
+                cmd.Parameters.AddWithValue("@nombre", nombre);
+                cmd.Parameters.AddWithValue("@apellidopaterno", apellidopaterno);
+                cmd.Parameters.AddWithValue("@apellidomaterno", apellidomaterno);
+                cmd.Parameters.AddWithValue("@alias", alias);
+                cmd.Parameters.AddWithValue("@activo", activo);
+                cmd.Parameters.AddWithValue("@clue", clue);
+
+
+
+                String cadenasql = "InsertarUsuario";
+                cmd.Connection = conexion;
+                cmd.CommandText = cadenasql;
+                cmd.CommandType = CommandType.StoredProcedure;
+
+
+                adapter.SelectCommand = cmd;
+                int dato = Convert.ToInt32(cmd.ExecuteNonQuery());
+                cmd.Dispose();
+                return dato;
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
+        }
+
+        public int ModificarUsuario(String username, String password, String email, string nombre, string apellidopaterno, string apellidomaterno, string alias, bool activo, string clue, string id, int bandera)
+        {
+            try
+            {
+
+                SqlCommand cmd = new SqlCommand();
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                string temp = hash(password);
+
+                cmd.Parameters.AddWithValue("@username", username);
+                if (bandera == 1)
+                    cmd.Parameters.AddWithValue("@password", temp);
+                else
+                    cmd.Parameters.AddWithValue("@password", password);
+
+                cmd.Parameters.AddWithValue("@email", email);
+                cmd.Parameters.AddWithValue("@nombre", nombre);
+                cmd.Parameters.AddWithValue("@apellidopaterno", apellidopaterno);
+                cmd.Parameters.AddWithValue("@apellidomaterno", apellidomaterno);
+                cmd.Parameters.AddWithValue("@alias", alias);
+                cmd.Parameters.AddWithValue("@activo", activo);
+                cmd.Parameters.AddWithValue("@clue", clue);
+                cmd.Parameters.AddWithValue("@id", Convert.ToInt32(id));
+
+
+
+                String cadenasql = "ModificarUsuario";
+                cmd.Connection = conexion;
+                cmd.CommandText = cadenasql;
+                cmd.CommandType = CommandType.StoredProcedure;
+
+
+                adapter.SelectCommand = cmd;
+                int dato = Convert.ToInt32(cmd.ExecuteNonQuery());
+                cmd.Dispose();
+                return dato;
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
+        }
+        #endregion
+
+        #region Permisos
         public int EliminarPermiso(String id)
         {
             SqlCommand cmd = new SqlCommand();
@@ -154,6 +256,9 @@ namespace AsistenciaSalud.Datos
             }
         }
 
+        #endregion
+
+        #region encrypt
         public string hash(string password)
         {
 
@@ -165,5 +270,7 @@ namespace AsistenciaSalud.Datos
             for (int i = 0; i < stream.Length; i++) sb.AppendFormat("{0:x2}", stream[i]);
             return sb.ToString();
         }
+
+        #endregion
     }
 }

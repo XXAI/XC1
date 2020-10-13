@@ -65,6 +65,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ChecadorMaestraDataSetPermisos.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ChecadorMaestraDataSetUsuarios.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ChecadorMaestraDataSetUsuarios.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Datos\DatosClue.cs" />
     <Compile Include="Datos\DatosMaestro.cs" />
     <Compile Include="Datos\DatosSirh.cs" />
@@ -94,6 +99,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Usuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Usuarios.Designer.cs">
+      <DependentUpon>Usuarios.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="fom_message\filtro_form.resx">
       <DependentUpon>filtro_form.cs</DependentUpon>
     </EmbeddedResource>
@@ -116,6 +127,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Usuarios.resx">
+      <DependentUpon>Usuarios.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="ChecadorMaestraDataSetPermisos.xsc">
       <DependentUpon>ChecadorMaestraDataSetPermisos.xsd</DependentUpon>
     </None>
@@ -126,6 +140,17 @@
     </None>
     <None Include="ChecadorMaestraDataSetPermisos.xss">
       <DependentUpon>ChecadorMaestraDataSetPermisos.xsd</DependentUpon>
+    </None>
+    <None Include="ChecadorMaestraDataSetUsuarios.xsc">
+      <DependentUpon>ChecadorMaestraDataSetUsuarios.xsd</DependentUpon>
+    </None>
+    <None Include="ChecadorMaestraDataSetUsuarios.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ChecadorMaestraDataSetUsuarios.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ChecadorMaestraDataSetUsuarios.xss">
+      <DependentUpon>ChecadorMaestraDataSetUsuarios.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -185,6 +210,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\salir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\permisos.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

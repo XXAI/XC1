@@ -42,6 +42,16 @@ namespace AsistenciaSalud
 
         }
 
+        private void mlusuarios_Click(object sender, EventArgs e)
+        {
+            _FormularioSecundario = new Usuarios();
+            //Thread principal = new Thread(run);
+            ////this.Close();
+            //principal.SetApartmentState(System.Threading.ApartmentState.STA);
+            //principal.Start();
+            _FormularioSecundario.ShowDialog();
+        }
+
         private void Principal_Load(object sender, EventArgs e)
         {
             tslbpersonal.Text = "Bienvenido " + nombre;

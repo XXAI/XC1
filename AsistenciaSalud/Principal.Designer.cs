@@ -34,9 +34,9 @@
             this.tslclue = new System.Windows.Forms.ToolStripLabel();
             this.mtcmenu = new MetroFramework.Controls.MetroTabControl();
             this.mtpempleados = new MetroFramework.Controls.MetroTabPage();
-            this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
             this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
             this.mtcmenuprincipal = new MetroFramework.Controls.MetroTabPage();
+            this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
             this.metroTile1 = new MetroFramework.Controls.MetroTile();
             this.mltrabajadores = new MetroFramework.Controls.MetroTile();
             this.mlusuarios = new MetroFramework.Controls.MetroTile();
@@ -86,7 +86,7 @@
             this.mtcmenu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mtcmenu.Location = new System.Drawing.Point(20, 60);
             this.mtcmenu.Name = "mtcmenu";
-            this.mtcmenu.SelectedIndex = 2;
+            this.mtcmenu.SelectedIndex = 1;
             this.mtcmenu.Size = new System.Drawing.Size(760, 345);
             this.mtcmenu.TabIndex = 18;
             this.mtcmenu.UseSelectable = true;
@@ -105,20 +105,6 @@
             this.mtpempleados.VerticalScrollbarBarColor = true;
             this.mtpempleados.VerticalScrollbarHighlightOnWheel = false;
             this.mtpempleados.VerticalScrollbarSize = 10;
-            // 
-            // metroTabPage1
-            // 
-            this.metroTabPage1.HorizontalScrollbarBarColor = true;
-            this.metroTabPage1.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroTabPage1.HorizontalScrollbarSize = 10;
-            this.metroTabPage1.Location = new System.Drawing.Point(4, 38);
-            this.metroTabPage1.Name = "metroTabPage1";
-            this.metroTabPage1.Size = new System.Drawing.Size(752, 303);
-            this.metroTabPage1.TabIndex = 0;
-            this.metroTabPage1.Text = "Dispositivos";
-            this.metroTabPage1.VerticalScrollbarBarColor = true;
-            this.metroTabPage1.VerticalScrollbarHighlightOnWheel = false;
-            this.metroTabPage1.VerticalScrollbarSize = 10;
             // 
             // metroTabPage2
             // 
@@ -153,6 +139,20 @@
             this.mtcmenuprincipal.VerticalScrollbarBarColor = true;
             this.mtcmenuprincipal.VerticalScrollbarHighlightOnWheel = false;
             this.mtcmenuprincipal.VerticalScrollbarSize = 10;
+            // 
+            // metroTabPage1
+            // 
+            this.metroTabPage1.HorizontalScrollbarBarColor = true;
+            this.metroTabPage1.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroTabPage1.HorizontalScrollbarSize = 10;
+            this.metroTabPage1.Location = new System.Drawing.Point(4, 38);
+            this.metroTabPage1.Name = "metroTabPage1";
+            this.metroTabPage1.Size = new System.Drawing.Size(752, 303);
+            this.metroTabPage1.TabIndex = 0;
+            this.metroTabPage1.Text = "Dispositivos";
+            this.metroTabPage1.VerticalScrollbarBarColor = true;
+            this.metroTabPage1.VerticalScrollbarHighlightOnWheel = false;
+            this.metroTabPage1.VerticalScrollbarSize = 10;
             // 
             // metroTile1
             // 
@@ -189,7 +189,6 @@
             // mlusuarios
             // 
             this.mlusuarios.ActiveControl = null;
-            this.mlusuarios.Enabled = false;
             this.mlusuarios.Location = new System.Drawing.Point(216, 15);
             this.mlusuarios.Name = "mlusuarios";
             this.mlusuarios.Size = new System.Drawing.Size(161, 150);
@@ -201,6 +200,7 @@
             this.mlusuarios.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.mlusuarios.UseSelectable = true;
             this.mlusuarios.UseTileImage = true;
+            this.mlusuarios.Click += new System.EventHandler(this.mlusuarios_Click);
             // 
             // mlpermisos
             // 

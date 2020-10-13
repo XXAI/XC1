@@ -218,10 +218,22 @@ namespace AsistenciaSalud
 
         private bool ValidaFormulario()
         {
-            if (mtxtpermiso.Text != "" && mtxtdescripcion.Text!="")
+            if (mtxtpermiso.Text != "" || mtxtdescripcion.Text!="")
                 return true;
             else
                 return false;
+        }
+
+        private void toolStripLabel1_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                permissionsBindingSource.Filter = "descripcion LIKE '%" + toolStriptbid.Text + "%' OR id LIKE '" + toolStriptbid.Text + "%'";
+            }
+            catch (Exception ex)
+            {
+                MetroFramework.MetroMessageBox.Show(this, ex.Message, "CLientes", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
