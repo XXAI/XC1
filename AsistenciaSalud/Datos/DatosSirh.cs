@@ -32,6 +32,7 @@ namespace AsistenciaSalud.Datos
             }
         }
 
+#region clues
         public DataTable ConsultarClues()
         {
             try
@@ -89,5 +90,40 @@ namespace AsistenciaSalud.Datos
                 throw e;
             }
         }
+
+        #endregion
+
+        #region personalactivo
+
+        public DataTable ConsultarPersonalActivo(String clues)
+        {
+            try
+            {
+                DataTable tabla = new DataTable();
+                MySqlCommand cmd = new MySqlCommand();
+                MySqlDataAdapter adapter = new MySqlDataAdapter();
+
+                String cadenasql = "SELECT * FROM empleados where estatus=1 and validado=1 and clues='"+clues+"'";
+                cmd.Connection = conexion;
+                cmd.CommandText = cadenasql;
+                cmd.CommandType = CommandType.Text;
+
+
+                adapter.SelectCommand = cmd;
+                adapter.Fill(tabla);
+
+                cmd.Dispose();
+                adapter.Dispose();
+
+                return tabla;
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
+        }
+
+        #endregion
     }
 }

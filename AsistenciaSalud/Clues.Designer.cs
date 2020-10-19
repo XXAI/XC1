@@ -29,15 +29,19 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Clues));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Clues));
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStriptbid = new System.Windows.Forms.ToolStripTextBox();
@@ -46,6 +50,12 @@
             this.pnmenu = new System.Windows.Forms.Panel();
             this.metroTile2 = new MetroFramework.Controls.MetroTile();
             this.metroTile1 = new MetroFramework.Controls.MetroTile();
+            this.mlsalir = new MetroFramework.Controls.MetroTile();
+            this.mlguardar = new MetroFramework.Controls.MetroTile();
+            this.mlcancelar = new MetroFramework.Controls.MetroTile();
+            this.mleliminar = new MetroFramework.Controls.MetroTile();
+            this.mlmodificar = new MetroFramework.Controls.MetroTile();
+            this.mlagregar = new MetroFramework.Controls.MetroTile();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.mgclues = new MetroFramework.Controls.MetroGrid();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,26 +64,16 @@
             this.cluesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cluesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.checadorMaestraDataSetClues = new AsistenciaSalud.ChecadorMaestraDataSetClues();
-            this.cluesTableAdapter = new AsistenciaSalud.ChecadorMaestraDataSetCluesTableAdapters.CluesTableAdapter();
             this.gbclues = new System.Windows.Forms.GroupBox();
-            this.mtxtid = new MetroFramework.Controls.MetroTextBox();
-            this.lbid = new System.Windows.Forms.Label();
-            this.mtxtdescripcion = new MetroFramework.Controls.MetroTextBox();
-            this.lbdescripcion = new System.Windows.Forms.Label();
+            this.cbclue = new System.Windows.Forms.ComboBox();
+            this.lbclue = new System.Windows.Forms.Label();
             this.mtxtruta = new MetroFramework.Controls.MetroTextBox();
             this.lbruta = new System.Windows.Forms.Label();
-            this.lbclue = new System.Windows.Forms.Label();
-            this.cbclue = new System.Windows.Forms.ComboBox();
-            this.mlsalir = new MetroFramework.Controls.MetroTile();
-            this.mlguardar = new MetroFramework.Controls.MetroTile();
-            this.mlcancelar = new MetroFramework.Controls.MetroTile();
-            this.mleliminar = new MetroFramework.Controls.MetroTile();
-            this.mlmodificar = new MetroFramework.Controls.MetroTile();
-            this.mlagregar = new MetroFramework.Controls.MetroTile();
-            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
+            this.mtxtdescripcion = new MetroFramework.Controls.MetroTextBox();
+            this.lbdescripcion = new System.Windows.Forms.Label();
+            this.mtxtid = new MetroFramework.Controls.MetroTextBox();
+            this.lbid = new System.Windows.Forms.Label();
+            this.cluesTableAdapter = new AsistenciaSalud.ChecadorMaestraDataSetCluesTableAdapters.CluesTableAdapter();
             this.pbsalud = new System.Windows.Forms.PictureBox();
             this.close_principal = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
@@ -124,6 +124,24 @@
             this.bindingNavigatorCountItem.Text = "de {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Número total de elementos";
             // 
+            // bindingNavigatorMoveFirstItem
+            // 
+            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
+            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
+            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveFirstItem.Text = "Mover primero";
+            // 
+            // bindingNavigatorMovePreviousItem
+            // 
+            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
+            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
+            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMovePreviousItem.Text = "Mover anterior";
+            // 
             // bindingNavigatorSeparator
             // 
             this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
@@ -143,6 +161,24 @@
             // 
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
             this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorMoveNextItem
+            // 
+            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
+            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
+            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveNextItem.Text = "Mover siguiente";
+            // 
+            // bindingNavigatorMoveLastItem
+            // 
+            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
+            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
+            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveLastItem.Text = "Mover último";
             // 
             // bindingNavigatorSeparator2
             // 
@@ -176,7 +212,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36.68122F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 63.31878F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 91F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 92F));
             this.tableLayoutPanel1.Controls.Add(this.pnmenu, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.metroPanel1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.gbclues, 1, 0);
@@ -198,7 +234,7 @@
             this.pnmenu.Controls.Add(this.mleliminar);
             this.pnmenu.Controls.Add(this.mlmodificar);
             this.pnmenu.Controls.Add(this.mlagregar);
-            this.pnmenu.Location = new System.Drawing.Point(690, 3);
+            this.pnmenu.Location = new System.Drawing.Point(689, 3);
             this.pnmenu.Name = "pnmenu";
             this.pnmenu.Size = new System.Drawing.Size(85, 481);
             this.pnmenu.TabIndex = 36;
@@ -230,243 +266,6 @@
             this.metroTile1.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroTile1.UseSelectable = true;
             this.metroTile1.UseStyleColors = true;
-            // 
-            // metroPanel1
-            // 
-            this.metroPanel1.Controls.Add(this.mgclues);
-            this.metroPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.metroPanel1.HorizontalScrollbarBarColor = true;
-            this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel1.HorizontalScrollbarSize = 10;
-            this.metroPanel1.Location = new System.Drawing.Point(3, 3);
-            this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(246, 484);
-            this.metroPanel1.TabIndex = 37;
-            this.metroPanel1.VerticalScrollbarBarColor = true;
-            this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel1.VerticalScrollbarSize = 10;
-            // 
-            // mgclues
-            // 
-            this.mgclues.AllowUserToAddRows = false;
-            this.mgclues.AllowUserToDeleteRows = false;
-            this.mgclues.AllowUserToResizeRows = false;
-            this.mgclues.AutoGenerateColumns = false;
-            this.mgclues.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.mgclues.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.mgclues.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.mgclues.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.mgclues.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.mgclues.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.mgclues.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.descripcionDataGridViewTextBoxColumn,
-            this.rutaDataGridViewTextBoxColumn,
-            this.cluesDataGridViewTextBoxColumn});
-            this.mgclues.DataSource = this.cluesBindingSource;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.mgclues.DefaultCellStyle = dataGridViewCellStyle2;
-            this.mgclues.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mgclues.EnableHeadersVisualStyles = false;
-            this.mgclues.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.mgclues.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.mgclues.Location = new System.Drawing.Point(0, 0);
-            this.mgclues.Name = "mgclues";
-            this.mgclues.ReadOnly = true;
-            this.mgclues.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.mgclues.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.mgclues.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.mgclues.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.mgclues.Size = new System.Drawing.Size(246, 484);
-            this.mgclues.TabIndex = 2;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // descripcionDataGridViewTextBoxColumn
-            // 
-            this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "descripcion";
-            this.descripcionDataGridViewTextBoxColumn.HeaderText = "descripción";
-            this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
-            this.descripcionDataGridViewTextBoxColumn.ReadOnly = true;
-            this.descripcionDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // rutaDataGridViewTextBoxColumn
-            // 
-            this.rutaDataGridViewTextBoxColumn.DataPropertyName = "ruta";
-            this.rutaDataGridViewTextBoxColumn.HeaderText = "ruta";
-            this.rutaDataGridViewTextBoxColumn.Name = "rutaDataGridViewTextBoxColumn";
-            this.rutaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.rutaDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // cluesDataGridViewTextBoxColumn
-            // 
-            this.cluesDataGridViewTextBoxColumn.DataPropertyName = "clues";
-            this.cluesDataGridViewTextBoxColumn.HeaderText = "Clue";
-            this.cluesDataGridViewTextBoxColumn.Name = "cluesDataGridViewTextBoxColumn";
-            this.cluesDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // cluesBindingSource
-            // 
-            this.cluesBindingSource.DataMember = "Clues";
-            this.cluesBindingSource.DataSource = this.checadorMaestraDataSetClues;
-            // 
-            // checadorMaestraDataSetClues
-            // 
-            this.checadorMaestraDataSetClues.DataSetName = "ChecadorMaestraDataSetClues";
-            this.checadorMaestraDataSetClues.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // cluesTableAdapter
-            // 
-            this.cluesTableAdapter.ClearBeforeFill = true;
-            // 
-            // gbclues
-            // 
-            this.gbclues.Controls.Add(this.cbclue);
-            this.gbclues.Controls.Add(this.lbclue);
-            this.gbclues.Controls.Add(this.mtxtruta);
-            this.gbclues.Controls.Add(this.lbruta);
-            this.gbclues.Controls.Add(this.mtxtdescripcion);
-            this.gbclues.Controls.Add(this.lbdescripcion);
-            this.gbclues.Controls.Add(this.mtxtid);
-            this.gbclues.Controls.Add(this.lbid);
-            this.gbclues.Location = new System.Drawing.Point(255, 3);
-            this.gbclues.Name = "gbclues";
-            this.gbclues.Size = new System.Drawing.Size(429, 181);
-            this.gbclues.TabIndex = 38;
-            this.gbclues.TabStop = false;
-            this.gbclues.Text = "Datos generales";
-            // 
-            // mtxtid
-            // 
-            this.mtxtid.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cluesBindingSource, "id", true));
-            this.mtxtid.Enabled = false;
-            this.mtxtid.Lines = new string[0];
-            this.mtxtid.Location = new System.Drawing.Point(101, 18);
-            this.mtxtid.Margin = new System.Windows.Forms.Padding(2);
-            this.mtxtid.MaxLength = 32767;
-            this.mtxtid.Name = "mtxtid";
-            this.mtxtid.PasswordChar = '\0';
-            this.mtxtid.ReadOnly = true;
-            this.mtxtid.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.mtxtid.SelectedText = "";
-            this.mtxtid.Size = new System.Drawing.Size(323, 23);
-            this.mtxtid.TabIndex = 14;
-            this.mtxtid.UseSelectable = true;
-            this.mtxtid.UseStyleColors = true;
-            // 
-            // lbid
-            // 
-            this.lbid.AutoSize = true;
-            this.lbid.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbid.Location = new System.Drawing.Point(5, 23);
-            this.lbid.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbid.Name = "lbid";
-            this.lbid.Size = new System.Drawing.Size(43, 18);
-            this.lbid.TabIndex = 13;
-            this.lbid.Text = "Clave";
-            // 
-            // mtxtdescripcion
-            // 
-            this.mtxtdescripcion.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cluesBindingSource, "descripcion", true));
-            this.mtxtdescripcion.Lines = new string[0];
-            this.mtxtdescripcion.Location = new System.Drawing.Point(101, 56);
-            this.mtxtdescripcion.Margin = new System.Windows.Forms.Padding(2);
-            this.mtxtdescripcion.MaxLength = 32767;
-            this.mtxtdescripcion.Name = "mtxtdescripcion";
-            this.mtxtdescripcion.PasswordChar = '\0';
-            this.mtxtdescripcion.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.mtxtdescripcion.SelectedText = "";
-            this.mtxtdescripcion.Size = new System.Drawing.Size(323, 23);
-            this.mtxtdescripcion.TabIndex = 16;
-            this.mtxtdescripcion.UseSelectable = true;
-            this.mtxtdescripcion.UseStyleColors = true;
-            // 
-            // lbdescripcion
-            // 
-            this.lbdescripcion.AutoSize = true;
-            this.lbdescripcion.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbdescripcion.Location = new System.Drawing.Point(5, 56);
-            this.lbdescripcion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbdescripcion.Name = "lbdescripcion";
-            this.lbdescripcion.Size = new System.Drawing.Size(80, 18);
-            this.lbdescripcion.TabIndex = 15;
-            this.lbdescripcion.Text = "Descripción";
-            // 
-            // mtxtruta
-            // 
-            this.mtxtruta.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cluesBindingSource, "ruta", true));
-            this.mtxtruta.Lines = new string[0];
-            this.mtxtruta.Location = new System.Drawing.Point(101, 94);
-            this.mtxtruta.Margin = new System.Windows.Forms.Padding(2);
-            this.mtxtruta.MaxLength = 32767;
-            this.mtxtruta.Name = "mtxtruta";
-            this.mtxtruta.PasswordChar = '\0';
-            this.mtxtruta.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.mtxtruta.SelectedText = "";
-            this.mtxtruta.Size = new System.Drawing.Size(323, 23);
-            this.mtxtruta.TabIndex = 18;
-            this.mtxtruta.UseSelectable = true;
-            this.mtxtruta.UseStyleColors = true;
-            // 
-            // lbruta
-            // 
-            this.lbruta.AutoSize = true;
-            this.lbruta.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbruta.Location = new System.Drawing.Point(5, 94);
-            this.lbruta.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbruta.Name = "lbruta";
-            this.lbruta.Size = new System.Drawing.Size(38, 18);
-            this.lbruta.TabIndex = 17;
-            this.lbruta.Text = "Ruta";
-            // 
-            // lbclue
-            // 
-            this.lbclue.AutoSize = true;
-            this.lbclue.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbclue.Location = new System.Drawing.Point(5, 130);
-            this.lbclue.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbclue.Name = "lbclue";
-            this.lbclue.Size = new System.Drawing.Size(35, 18);
-            this.lbclue.TabIndex = 19;
-            this.lbclue.Text = "Clue";
-            // 
-            // cbclue
-            // 
-            this.cbclue.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cluesBindingSource, "clues", true));
-            this.cbclue.DropDownWidth = 800;
-            this.cbclue.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbclue.FormattingEnabled = true;
-            this.cbclue.Location = new System.Drawing.Point(101, 130);
-            this.cbclue.Name = "cbclue";
-            this.cbclue.Size = new System.Drawing.Size(322, 26);
-            this.cbclue.TabIndex = 20;
-            this.cbclue.Text = "--seleccionar--";
             // 
             // mlsalir
             // 
@@ -573,41 +372,242 @@
             this.mlagregar.UseTileImage = true;
             this.mlagregar.Click += new System.EventHandler(this.mlagregar_Click);
             // 
-            // bindingNavigatorMoveFirstItem
+            // metroPanel1
             // 
-            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
-            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
-            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveFirstItem.Text = "Mover primero";
+            this.metroPanel1.Controls.Add(this.mgclues);
+            this.metroPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.metroPanel1.HorizontalScrollbarBarColor = true;
+            this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel1.HorizontalScrollbarSize = 10;
+            this.metroPanel1.Location = new System.Drawing.Point(3, 3);
+            this.metroPanel1.Name = "metroPanel1";
+            this.metroPanel1.Size = new System.Drawing.Size(245, 484);
+            this.metroPanel1.TabIndex = 37;
+            this.metroPanel1.VerticalScrollbarBarColor = true;
+            this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel1.VerticalScrollbarSize = 10;
             // 
-            // bindingNavigatorMovePreviousItem
+            // mgclues
             // 
-            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
-            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
-            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMovePreviousItem.Text = "Mover anterior";
+            this.mgclues.AllowUserToAddRows = false;
+            this.mgclues.AllowUserToDeleteRows = false;
+            this.mgclues.AllowUserToResizeRows = false;
+            this.mgclues.AutoGenerateColumns = false;
+            this.mgclues.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.mgclues.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.mgclues.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.mgclues.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.mgclues.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.mgclues.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.mgclues.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.descripcionDataGridViewTextBoxColumn,
+            this.rutaDataGridViewTextBoxColumn,
+            this.cluesDataGridViewTextBoxColumn});
+            this.mgclues.DataSource = this.cluesBindingSource;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.mgclues.DefaultCellStyle = dataGridViewCellStyle2;
+            this.mgclues.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mgclues.EnableHeadersVisualStyles = false;
+            this.mgclues.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.mgclues.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.mgclues.Location = new System.Drawing.Point(0, 0);
+            this.mgclues.Name = "mgclues";
+            this.mgclues.ReadOnly = true;
+            this.mgclues.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.mgclues.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.mgclues.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.mgclues.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.mgclues.Size = new System.Drawing.Size(245, 484);
+            this.mgclues.TabIndex = 2;
             // 
-            // bindingNavigatorMoveNextItem
+            // idDataGridViewTextBoxColumn
             // 
-            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
-            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
-            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveNextItem.Text = "Mover siguiente";
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Visible = false;
             // 
-            // bindingNavigatorMoveLastItem
+            // descripcionDataGridViewTextBoxColumn
             // 
-            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
-            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
-            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveLastItem.Text = "Mover último";
+            this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "descripcion";
+            this.descripcionDataGridViewTextBoxColumn.HeaderText = "descripción";
+            this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
+            this.descripcionDataGridViewTextBoxColumn.ReadOnly = true;
+            this.descripcionDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // rutaDataGridViewTextBoxColumn
+            // 
+            this.rutaDataGridViewTextBoxColumn.DataPropertyName = "ruta";
+            this.rutaDataGridViewTextBoxColumn.HeaderText = "ruta";
+            this.rutaDataGridViewTextBoxColumn.Name = "rutaDataGridViewTextBoxColumn";
+            this.rutaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.rutaDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // cluesDataGridViewTextBoxColumn
+            // 
+            this.cluesDataGridViewTextBoxColumn.DataPropertyName = "clues";
+            this.cluesDataGridViewTextBoxColumn.HeaderText = "Clue";
+            this.cluesDataGridViewTextBoxColumn.Name = "cluesDataGridViewTextBoxColumn";
+            this.cluesDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // cluesBindingSource
+            // 
+            this.cluesBindingSource.DataMember = "Clues";
+            this.cluesBindingSource.DataSource = this.checadorMaestraDataSetClues;
+            // 
+            // checadorMaestraDataSetClues
+            // 
+            this.checadorMaestraDataSetClues.DataSetName = "ChecadorMaestraDataSetClues";
+            this.checadorMaestraDataSetClues.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // gbclues
+            // 
+            this.gbclues.Controls.Add(this.cbclue);
+            this.gbclues.Controls.Add(this.lbclue);
+            this.gbclues.Controls.Add(this.mtxtruta);
+            this.gbclues.Controls.Add(this.lbruta);
+            this.gbclues.Controls.Add(this.mtxtdescripcion);
+            this.gbclues.Controls.Add(this.lbdescripcion);
+            this.gbclues.Controls.Add(this.mtxtid);
+            this.gbclues.Controls.Add(this.lbid);
+            this.gbclues.Location = new System.Drawing.Point(254, 3);
+            this.gbclues.Name = "gbclues";
+            this.gbclues.Size = new System.Drawing.Size(429, 181);
+            this.gbclues.TabIndex = 38;
+            this.gbclues.TabStop = false;
+            this.gbclues.Text = "Datos generales";
+            // 
+            // cbclue
+            // 
+            this.cbclue.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cluesBindingSource, "clues", true));
+            this.cbclue.DropDownWidth = 800;
+            this.cbclue.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbclue.FormattingEnabled = true;
+            this.cbclue.Location = new System.Drawing.Point(101, 130);
+            this.cbclue.Name = "cbclue";
+            this.cbclue.Size = new System.Drawing.Size(322, 26);
+            this.cbclue.TabIndex = 20;
+            this.cbclue.Text = "--seleccionar--";
+            // 
+            // lbclue
+            // 
+            this.lbclue.AutoSize = true;
+            this.lbclue.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbclue.Location = new System.Drawing.Point(5, 130);
+            this.lbclue.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbclue.Name = "lbclue";
+            this.lbclue.Size = new System.Drawing.Size(35, 18);
+            this.lbclue.TabIndex = 19;
+            this.lbclue.Text = "Clue";
+            // 
+            // mtxtruta
+            // 
+            this.mtxtruta.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cluesBindingSource, "ruta", true));
+            this.mtxtruta.Lines = new string[0];
+            this.mtxtruta.Location = new System.Drawing.Point(101, 94);
+            this.mtxtruta.Margin = new System.Windows.Forms.Padding(2);
+            this.mtxtruta.MaxLength = 32767;
+            this.mtxtruta.Name = "mtxtruta";
+            this.mtxtruta.PasswordChar = '\0';
+            this.mtxtruta.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.mtxtruta.SelectedText = "";
+            this.mtxtruta.Size = new System.Drawing.Size(323, 23);
+            this.mtxtruta.TabIndex = 18;
+            this.mtxtruta.UseSelectable = true;
+            this.mtxtruta.UseStyleColors = true;
+            // 
+            // lbruta
+            // 
+            this.lbruta.AutoSize = true;
+            this.lbruta.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbruta.Location = new System.Drawing.Point(5, 94);
+            this.lbruta.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbruta.Name = "lbruta";
+            this.lbruta.Size = new System.Drawing.Size(38, 18);
+            this.lbruta.TabIndex = 17;
+            this.lbruta.Text = "Ruta";
+            // 
+            // mtxtdescripcion
+            // 
+            this.mtxtdescripcion.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cluesBindingSource, "descripcion", true));
+            this.mtxtdescripcion.Lines = new string[0];
+            this.mtxtdescripcion.Location = new System.Drawing.Point(101, 56);
+            this.mtxtdescripcion.Margin = new System.Windows.Forms.Padding(2);
+            this.mtxtdescripcion.MaxLength = 32767;
+            this.mtxtdescripcion.Name = "mtxtdescripcion";
+            this.mtxtdescripcion.PasswordChar = '\0';
+            this.mtxtdescripcion.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.mtxtdescripcion.SelectedText = "";
+            this.mtxtdescripcion.Size = new System.Drawing.Size(323, 23);
+            this.mtxtdescripcion.TabIndex = 16;
+            this.mtxtdescripcion.UseSelectable = true;
+            this.mtxtdescripcion.UseStyleColors = true;
+            // 
+            // lbdescripcion
+            // 
+            this.lbdescripcion.AutoSize = true;
+            this.lbdescripcion.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbdescripcion.Location = new System.Drawing.Point(5, 56);
+            this.lbdescripcion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbdescripcion.Name = "lbdescripcion";
+            this.lbdescripcion.Size = new System.Drawing.Size(80, 18);
+            this.lbdescripcion.TabIndex = 15;
+            this.lbdescripcion.Text = "Descripción";
+            // 
+            // mtxtid
+            // 
+            this.mtxtid.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cluesBindingSource, "id", true));
+            this.mtxtid.Enabled = false;
+            this.mtxtid.Lines = new string[0];
+            this.mtxtid.Location = new System.Drawing.Point(101, 18);
+            this.mtxtid.Margin = new System.Windows.Forms.Padding(2);
+            this.mtxtid.MaxLength = 32767;
+            this.mtxtid.Name = "mtxtid";
+            this.mtxtid.PasswordChar = '\0';
+            this.mtxtid.ReadOnly = true;
+            this.mtxtid.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.mtxtid.SelectedText = "";
+            this.mtxtid.Size = new System.Drawing.Size(323, 23);
+            this.mtxtid.TabIndex = 14;
+            this.mtxtid.UseSelectable = true;
+            this.mtxtid.UseStyleColors = true;
+            // 
+            // lbid
+            // 
+            this.lbid.AutoSize = true;
+            this.lbid.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbid.Location = new System.Drawing.Point(5, 23);
+            this.lbid.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbid.Name = "lbid";
+            this.lbid.Size = new System.Drawing.Size(43, 18);
+            this.lbid.TabIndex = 13;
+            this.lbid.Text = "Clave";
+            // 
+            // cluesTableAdapter
+            // 
+            this.cluesTableAdapter.ClearBeforeFill = true;
             // 
             // pbsalud
             // 
@@ -646,7 +646,7 @@
             this.MaximumSize = new System.Drawing.Size(833, 634);
             this.Name = "Clues";
             this.Style = MetroFramework.MetroColorStyle.Purple;
-            this.Text = "Catálogo de Clues";
+            this.Text = "Catálogo de Conexiones";
             this.Load += new System.EventHandler(this.Clues_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
             this.bindingNavigator1.ResumeLayout(false);
