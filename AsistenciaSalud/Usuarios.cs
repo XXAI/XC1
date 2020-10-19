@@ -8,6 +8,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AsistenciaSalud.Negocio;
 using MetroFramework.Forms;
 
 namespace AsistenciaSalud
@@ -15,7 +16,7 @@ namespace AsistenciaSalud
     public partial class Usuarios : MetroForm
     {
         private bool Agregar;
-        String password;
+        String password,cluenombre;
         public Usuarios()
         {
             InitializeComponent();
@@ -28,6 +29,13 @@ namespace AsistenciaSalud
             {
                 actualizar();
                 HabilitaCaptura(false);
+
+                cbclue.DataSource = AutoCompleClues.Datos();
+                cbclue.DisplayMember = "nombre_unidad";
+                cbclue.ValueMember = "nombre_unidad";
+                cbclue.AutoCompleteCustomSource = AutoCompleClues.Autocomplete();
+                cbclue.AutoCompleteMode = AutoCompleteMode.Suggest;
+                cbclue.AutoCompleteSource = AutoCompleteSource.CustomSource;
                 // LimpiarFormulario();
 
 
@@ -133,6 +141,7 @@ namespace AsistenciaSalud
             {
                 Agregar = false;
                 password = mtxtpassword.Text;
+                cluenombre = cbclue.Text;
                 HabilitaCaptura(true);
             }
             else
@@ -182,8 +191,15 @@ namespace AsistenciaSalud
                     {
 
                         Datos.DatosMaestro insertar = new Datos.DatosMaestro();
-
-                        int valor = insertar.InsertarUsuario(mtxtusername.Text, mtxtpassword.Text, mtxtemail.Text, mtxtnombre.Text, mtxtapellidopaterno.Text, mtxtapellidomaterno.Text, mtxtalias.Text, mcbactivo.Checked, cbclue.Text);
+                        Datos.DatosSirh consultarclue = new Datos.DatosSirh();
+                        DataTable dtclue;
+                        dtclue = consultarclue.ConsultarCluesByUnidad(cbclue.Text);
+                        String clueid="";
+                        if (dtclue.Rows.Count > 0)
+                        { 
+                            clueid= dtclue.Rows[0]["clues"].ToString();
+                        }
+                        int valor = insertar.InsertarUsuario(mtxtusername.Text, mtxtpassword.Text, mtxtemail.Text, mtxtnombre.Text, mtxtapellidopaterno.Text, mtxtapellidomaterno.Text, mtxtalias.Text, mcbactivo.Checked, clueid);
                         if (valor > 0)
                             MetroFramework.MetroMessageBox.Show(this, "Usuario Guardado con exito", "Usuarios", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         else
@@ -196,13 +212,30 @@ namespace AsistenciaSalud
                     {
                         Datos.DatosMaestro modificar = new Datos.DatosMaestro();
                         int bandera = 0;
+                        String clueid = "";
                         if (password != mtxtpassword.Text)
                         {
                             password = mtxtpassword.Text;
                             bandera = 1;
                         }
 
-                        int valor = modificar.ModificarUsuario(mtxtusername.Text, mtxtpassword.Text, mtxtemail.Text, mtxtnombre.Text, mtxtapellidopaterno.Text, mtxtapellidomaterno.Text, mtxtalias.Text, mcbactivo.Checked, cbclue.Text,mtxtid.Text,bandera);
+                        if (cluenombre != cbclue.Text)
+                        {
+                            Datos.DatosSirh consultarclue = new Datos.DatosSirh();
+                            DataTable dtclue;
+                            dtclue = consultarclue.ConsultarCluesByUnidad(cbclue.Text);
+                           
+                            if (dtclue.Rows.Count > 0)
+                            {
+                                clueid = dtclue.Rows[0]["clues"].ToString();
+                            }
+                        }
+                        else
+                        {
+                            clueid = cbclue.Text;
+                        }
+
+                        int valor = modificar.ModificarUsuario(mtxtusername.Text, mtxtpassword.Text, mtxtemail.Text, mtxtnombre.Text, mtxtapellidopaterno.Text, mtxtapellidomaterno.Text, mtxtalias.Text, mcbactivo.Checked, clueid,mtxtid.Text,bandera);
                         if (valor > 0)
                             MetroFramework.MetroMessageBox.Show(this, "Usuario modificado con exito", "Usuarios", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         else

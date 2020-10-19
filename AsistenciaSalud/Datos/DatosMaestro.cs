@@ -258,6 +258,75 @@ namespace AsistenciaSalud.Datos
 
         #endregion
 
+        #region clues
+
+        public int InsertarClues(String descripcion, String ruta, String clues)
+        {
+            try
+            {
+
+                SqlCommand cmd = new SqlCommand();
+                SqlDataAdapter adapter = new SqlDataAdapter();
+
+                cmd.Parameters.AddWithValue("@descripcion", descripcion);
+                cmd.Parameters.AddWithValue("@ruta", ruta);
+                cmd.Parameters.AddWithValue("@clues", clues);
+
+
+
+                String cadenasql = "InsertarClues";
+                cmd.Connection = conexion;
+                cmd.CommandText = cadenasql;
+                cmd.CommandType = CommandType.StoredProcedure;
+
+
+                adapter.SelectCommand = cmd;
+                int dato = Convert.ToInt32(cmd.ExecuteNonQuery());
+                cmd.Dispose();
+                return dato;
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
+        }
+
+        public int ModificarClues(String descripcion, String ruta, String clues,string idclue)
+        {
+            try
+            {
+
+                SqlCommand cmd = new SqlCommand();
+                SqlDataAdapter adapter = new SqlDataAdapter();
+
+                cmd.Parameters.AddWithValue("@id", idclue);
+                cmd.Parameters.AddWithValue("@descripcion", descripcion);
+                cmd.Parameters.AddWithValue("@ruta", ruta);
+                cmd.Parameters.AddWithValue("@clues", clues);
+
+
+
+                String cadenasql = "ModificarClues";
+                cmd.Connection = conexion;
+                cmd.CommandText = cadenasql;
+                cmd.CommandType = CommandType.StoredProcedure;
+
+
+                adapter.SelectCommand = cmd;
+                int dato = Convert.ToInt32(cmd.ExecuteNonQuery());
+                cmd.Dispose();
+                return dato;
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
+        }
+
+        #endregion
+
         #region encrypt
         public string hash(string password)
         {

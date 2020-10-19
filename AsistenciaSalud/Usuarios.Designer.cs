@@ -29,11 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Usuarios));
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
+            this.usersV2BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.checadorMaestraDataSetUsuarios = new AsistenciaSalud.ChecadorMaestraDataSetUsuarios();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
@@ -60,8 +62,6 @@
             this.clueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.deletedatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.updatedatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.usersV2BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.checadorMaestraDataSetUsuarios = new AsistenciaSalud.ChecadorMaestraDataSetUsuarios();
             this.mpcuerpo = new MetroFramework.Controls.MetroPanel();
             this.gbpermisos = new System.Windows.Forms.GroupBox();
             this.cbclue = new System.Windows.Forms.ComboBox();
@@ -86,6 +86,7 @@
             this.lbnombre = new System.Windows.Forms.Label();
             this.usersV2TableAdapter = new AsistenciaSalud.ChecadorMaestraDataSetUsuariosTableAdapters.usersV2TableAdapter();
             this.errorproveedor = new System.Windows.Forms.ErrorProvider(this.components);
+            this.htmlLabel1 = new MetroFramework.Drawing.Html.HtmlLabel();
             this.mlsalir = new MetroFramework.Controls.MetroTile();
             this.mlcargarpermisos = new MetroFramework.Controls.MetroTile();
             this.mlguardar = new MetroFramework.Controls.MetroTile();
@@ -101,12 +102,12 @@
             this.close_principal = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.usersV2BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checadorMaestraDataSetUsuarios)).BeginInit();
             this.tplprincipal.SuspendLayout();
             this.pnmenu.SuspendLayout();
             this.mpanelbusqueda.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mgvusuarios)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usersV2BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checadorMaestraDataSetUsuarios)).BeginInit();
             this.mpcuerpo.SuspendLayout();
             this.gbpermisos.SuspendLayout();
             this.gbdatosgenerales.SuspendLayout();
@@ -143,6 +144,16 @@
             this.bindingNavigator1.Size = new System.Drawing.Size(778, 25);
             this.bindingNavigator1.TabIndex = 23;
             this.bindingNavigator1.Text = "bindingNavigator1";
+            // 
+            // usersV2BindingSource
+            // 
+            this.usersV2BindingSource.DataMember = "usersV2";
+            this.usersV2BindingSource.DataSource = this.checadorMaestraDataSetUsuarios;
+            // 
+            // checadorMaestraDataSetUsuarios
+            // 
+            this.checadorMaestraDataSetUsuarios.DataSetName = "ChecadorMaestraDataSetUsuarios";
+            this.checadorMaestraDataSetUsuarios.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // bindingNavigatorCountItem
             // 
@@ -204,7 +215,7 @@
             this.tplprincipal.ColumnCount = 3;
             this.tplprincipal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.60234F));
             this.tplprincipal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 67.39766F));
-            this.tplprincipal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tplprincipal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 103F));
             this.tplprincipal.Controls.Add(this.pnmenu, 2, 0);
             this.tplprincipal.Controls.Add(this.mpanelbusqueda, 0, 0);
             this.tplprincipal.Controls.Add(this.mpcuerpo, 1, 0);
@@ -226,7 +237,7 @@
             this.pnmenu.Controls.Add(this.mleliminar);
             this.pnmenu.Controls.Add(this.mlmodificar);
             this.pnmenu.Controls.Add(this.mlagregar);
-            this.pnmenu.Location = new System.Drawing.Point(680, 3);
+            this.pnmenu.Location = new System.Drawing.Point(677, 3);
             this.pnmenu.Name = "pnmenu";
             this.pnmenu.Size = new System.Drawing.Size(85, 481);
             this.pnmenu.TabIndex = 36;
@@ -254,7 +265,7 @@
             this.mpanelbusqueda.HorizontalScrollbarSize = 10;
             this.mpanelbusqueda.Location = new System.Drawing.Point(3, 3);
             this.mpanelbusqueda.Name = "mpanelbusqueda";
-            this.mpanelbusqueda.Size = new System.Drawing.Size(215, 484);
+            this.mpanelbusqueda.Size = new System.Drawing.Size(214, 484);
             this.mpanelbusqueda.TabIndex = 37;
             this.mpanelbusqueda.VerticalScrollbarBarColor = true;
             this.mpanelbusqueda.VerticalScrollbarHighlightOnWheel = false;
@@ -270,14 +281,14 @@
             this.mgvusuarios.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.mgvusuarios.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.mgvusuarios.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.mgvusuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.mgvusuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.mgvusuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.mgvusuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
@@ -294,14 +305,14 @@
             this.deletedatDataGridViewTextBoxColumn,
             this.updatedatDataGridViewTextBoxColumn});
             this.mgvusuarios.DataSource = this.usersV2BindingSource;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.mgvusuarios.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.mgvusuarios.DefaultCellStyle = dataGridViewCellStyle2;
             this.mgvusuarios.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mgvusuarios.EnableHeadersVisualStyles = false;
             this.mgvusuarios.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -310,17 +321,17 @@
             this.mgvusuarios.Name = "mgvusuarios";
             this.mgvusuarios.ReadOnly = true;
             this.mgvusuarios.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.mgvusuarios.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.mgvusuarios.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.mgvusuarios.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.mgvusuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.mgvusuarios.Size = new System.Drawing.Size(215, 484);
+            this.mgvusuarios.Size = new System.Drawing.Size(214, 484);
             this.mgvusuarios.TabIndex = 2;
             // 
             // idDataGridViewTextBoxColumn
@@ -425,16 +436,6 @@
             this.updatedatDataGridViewTextBoxColumn.ReadOnly = true;
             this.updatedatDataGridViewTextBoxColumn.Visible = false;
             // 
-            // usersV2BindingSource
-            // 
-            this.usersV2BindingSource.DataMember = "usersV2";
-            this.usersV2BindingSource.DataSource = this.checadorMaestraDataSetUsuarios;
-            // 
-            // checadorMaestraDataSetUsuarios
-            // 
-            this.checadorMaestraDataSetUsuarios.DataSetName = "ChecadorMaestraDataSetUsuarios";
-            this.checadorMaestraDataSetUsuarios.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // mpcuerpo
             // 
             this.mpcuerpo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -444,9 +445,9 @@
             this.mpcuerpo.HorizontalScrollbarBarColor = true;
             this.mpcuerpo.HorizontalScrollbarHighlightOnWheel = false;
             this.mpcuerpo.HorizontalScrollbarSize = 10;
-            this.mpcuerpo.Location = new System.Drawing.Point(224, 3);
+            this.mpcuerpo.Location = new System.Drawing.Point(223, 3);
             this.mpcuerpo.Name = "mpcuerpo";
-            this.mpcuerpo.Size = new System.Drawing.Size(450, 484);
+            this.mpcuerpo.Size = new System.Drawing.Size(448, 484);
             this.mpcuerpo.TabIndex = 38;
             this.mpcuerpo.VerticalScrollbarBarColor = true;
             this.mpcuerpo.VerticalScrollbarHighlightOnWheel = false;
@@ -473,6 +474,7 @@
             // cbclue
             // 
             this.cbclue.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usersV2BindingSource, "Clue", true));
+            this.cbclue.DropDownWidth = 800;
             this.cbclue.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbclue.FormattingEnabled = true;
             this.cbclue.Location = new System.Drawing.Point(149, 121);
@@ -592,6 +594,7 @@
             // 
             // gbdatosgenerales
             // 
+            this.gbdatosgenerales.Controls.Add(this.htmlLabel1);
             this.gbdatosgenerales.Controls.Add(this.mtxtid);
             this.gbdatosgenerales.Controls.Add(this.lbid);
             this.gbdatosgenerales.Controls.Add(this.mtxtemail);
@@ -755,6 +758,18 @@
             // 
             this.errorproveedor.ContainerControl = this;
             this.errorproveedor.RightToLeft = true;
+            // 
+            // htmlLabel1
+            // 
+            this.htmlLabel1.AutoScroll = true;
+            this.htmlLabel1.AutoScrollMinSize = new System.Drawing.Size(64, 23);
+            this.htmlLabel1.AutoSize = false;
+            this.htmlLabel1.BackColor = System.Drawing.SystemColors.Window;
+            this.htmlLabel1.Location = new System.Drawing.Point(36, 18);
+            this.htmlLabel1.Name = "htmlLabel1";
+            this.htmlLabel1.Size = new System.Drawing.Size(8, 8);
+            this.htmlLabel1.TabIndex = 13;
+            this.htmlLabel1.Text = "htmlLabel1";
             // 
             // mlsalir
             // 
@@ -955,12 +970,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
             this.bindingNavigator1.ResumeLayout(false);
             this.bindingNavigator1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.usersV2BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checadorMaestraDataSetUsuarios)).EndInit();
             this.tplprincipal.ResumeLayout(false);
             this.pnmenu.ResumeLayout(false);
             this.mpanelbusqueda.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.mgvusuarios)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usersV2BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checadorMaestraDataSetUsuarios)).EndInit();
             this.mpcuerpo.ResumeLayout(false);
             this.gbpermisos.ResumeLayout(false);
             this.gbpermisos.PerformLayout();
@@ -1019,7 +1034,7 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn activoDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn clueDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn deletedatDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn createdatDataGridViewTextBoxColumn;
+        //private System.Windows.Forms.DataGridViewTextBoxColumn createdatDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn updatedatDataGridViewTextBoxColumn;
         private System.Windows.Forms.GroupBox gbdatosgenerales;
         private System.Windows.Forms.GroupBox gbpermisos;
@@ -1043,5 +1058,6 @@
         private MetroFramework.Controls.MetroTextBox mtxtid;
         private System.Windows.Forms.Label lbid;
         private System.Windows.Forms.ErrorProvider errorproveedor;
+        private MetroFramework.Drawing.Html.HtmlLabel htmlLabel1;
     }
 }

@@ -38,6 +38,7 @@
             this.mtcmenuprincipal = new MetroFramework.Controls.MetroTabPage();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
             this.metroTile1 = new MetroFramework.Controls.MetroTile();
+            this.mlconexiones = new MetroFramework.Controls.MetroTile();
             this.mltrabajadores = new MetroFramework.Controls.MetroTile();
             this.mlusuarios = new MetroFramework.Controls.MetroTile();
             this.mlpermisos = new MetroFramework.Controls.MetroTile();
@@ -63,7 +64,7 @@
             this.tslclue});
             this.toolStrip1.Location = new System.Drawing.Point(20, 405);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(760, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(799, 25);
             this.toolStrip1.TabIndex = 17;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -87,7 +88,7 @@
             this.mtcmenu.Location = new System.Drawing.Point(20, 60);
             this.mtcmenu.Name = "mtcmenu";
             this.mtcmenu.SelectedIndex = 1;
-            this.mtcmenu.Size = new System.Drawing.Size(760, 345);
+            this.mtcmenu.Size = new System.Drawing.Size(799, 345);
             this.mtcmenu.TabIndex = 18;
             this.mtcmenu.UseSelectable = true;
             // 
@@ -99,7 +100,7 @@
             this.mtpempleados.HorizontalScrollbarSize = 10;
             this.mtpempleados.Location = new System.Drawing.Point(4, 38);
             this.mtpempleados.Name = "mtpempleados";
-            this.mtpempleados.Size = new System.Drawing.Size(752, 303);
+            this.mtpempleados.Size = new System.Drawing.Size(791, 303);
             this.mtpempleados.TabIndex = 3;
             this.mtpempleados.Text = "Empleados";
             this.mtpempleados.VerticalScrollbarBarColor = true;
@@ -108,6 +109,7 @@
             // 
             // metroTabPage2
             // 
+            this.metroTabPage2.Controls.Add(this.mlconexiones);
             this.metroTabPage2.Controls.Add(this.mltrabajadores);
             this.metroTabPage2.Controls.Add(this.mlusuarios);
             this.metroTabPage2.Controls.Add(this.mlpermisos);
@@ -116,7 +118,7 @@
             this.metroTabPage2.HorizontalScrollbarSize = 10;
             this.metroTabPage2.Location = new System.Drawing.Point(4, 38);
             this.metroTabPage2.Name = "metroTabPage2";
-            this.metroTabPage2.Size = new System.Drawing.Size(752, 303);
+            this.metroTabPage2.Size = new System.Drawing.Size(791, 303);
             this.metroTabPage2.TabIndex = 1;
             this.metroTabPage2.Text = "Catalogos";
             this.metroTabPage2.VerticalScrollbarBarColor = true;
@@ -133,7 +135,7 @@
             this.mtcmenuprincipal.HorizontalScrollbarSize = 10;
             this.mtcmenuprincipal.Location = new System.Drawing.Point(4, 38);
             this.mtcmenuprincipal.Name = "mtcmenuprincipal";
-            this.mtcmenuprincipal.Size = new System.Drawing.Size(752, 303);
+            this.mtcmenuprincipal.Size = new System.Drawing.Size(791, 303);
             this.mtcmenuprincipal.TabIndex = 2;
             this.mtcmenuprincipal.Text = "Reportes";
             this.mtcmenuprincipal.VerticalScrollbarBarColor = true;
@@ -147,7 +149,7 @@
             this.metroTabPage1.HorizontalScrollbarSize = 10;
             this.metroTabPage1.Location = new System.Drawing.Point(4, 38);
             this.metroTabPage1.Name = "metroTabPage1";
-            this.metroTabPage1.Size = new System.Drawing.Size(752, 303);
+            this.metroTabPage1.Size = new System.Drawing.Size(791, 303);
             this.metroTabPage1.TabIndex = 0;
             this.metroTabPage1.Text = "Dispositivos";
             this.metroTabPage1.VerticalScrollbarBarColor = true;
@@ -169,6 +171,22 @@
             this.metroTile1.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroTile1.UseSelectable = true;
             this.metroTile1.UseTileImage = true;
+            // 
+            // mlconexiones
+            // 
+            this.mlconexiones.ActiveControl = null;
+            this.mlconexiones.Location = new System.Drawing.Point(627, 15);
+            this.mlconexiones.Name = "mlconexiones";
+            this.mlconexiones.Size = new System.Drawing.Size(161, 150);
+            this.mlconexiones.Style = MetroFramework.MetroColorStyle.Silver;
+            this.mlconexiones.TabIndex = 13;
+            this.mlconexiones.Text = "&Conexiones";
+            this.mlconexiones.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.mlconexiones.TileImage = global::AsistenciaSalud.Properties.Resources.clues;
+            this.mlconexiones.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.mlconexiones.UseSelectable = true;
+            this.mlconexiones.UseTileImage = true;
+            this.mlconexiones.Click += new System.EventHandler(this.mlconexiones_Click);
             // 
             // mltrabajadores
             // 
@@ -281,7 +299,7 @@
             // 
             this.close_principal.Cursor = System.Windows.Forms.Cursors.Hand;
             this.close_principal.Image = ((System.Drawing.Image)(resources.GetObject("close_principal.Image")));
-            this.close_principal.Location = new System.Drawing.Point(761, 12);
+            this.close_principal.Location = new System.Drawing.Point(805, 8);
             this.close_principal.Name = "close_principal";
             this.close_principal.Size = new System.Drawing.Size(30, 28);
             this.close_principal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -293,14 +311,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(839, 450);
             this.Controls.Add(this.mtcmenu);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.pbsalud);
             this.Controls.Add(this.close_principal);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(814, 464);
+            this.MaximumSize = new System.Drawing.Size(853, 464);
             this.MinimizeBox = false;
             this.Name = "Principal";
             this.Style = MetroFramework.MetroColorStyle.Purple;
@@ -338,5 +356,6 @@
         private MetroFramework.Controls.MetroTile metroTile3;
         private MetroFramework.Controls.MetroTile metroTile4;
         private System.Windows.Forms.ToolStripLabel tslclue;
+        private MetroFramework.Controls.MetroTile mlconexiones;
     }
 }

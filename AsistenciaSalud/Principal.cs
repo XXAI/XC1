@@ -34,6 +34,7 @@ namespace AsistenciaSalud
 
         private void mlpermisos_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             _FormularioSecundario = new Permisos();
             Thread principal = new Thread(run);
             //this.Close();
@@ -44,12 +45,24 @@ namespace AsistenciaSalud
 
         private void mlusuarios_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             _FormularioSecundario = new Usuarios();
             //Thread principal = new Thread(run);
             ////this.Close();
             //principal.SetApartmentState(System.Threading.ApartmentState.STA);
             //principal.Start();
             _FormularioSecundario.ShowDialog();
+        }
+
+        private void mlconexiones_Click(object sender, EventArgs e)
+        {
+            Cursor.Current = Cursors.WaitCursor;
+
+            _FormularioSecundario = new Clues();
+            Thread principal = new Thread(run);
+            //this.Close();
+            principal.SetApartmentState(System.Threading.ApartmentState.STA);
+            principal.Start();
         }
 
         private void Principal_Load(object sender, EventArgs e)
