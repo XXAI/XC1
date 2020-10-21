@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using AsistenciaSalud.Negocio;
 using MetroFramework.Forms;
@@ -17,9 +11,12 @@ namespace AsistenciaSalud
     {
         private bool Agregar;
         String password,cluenombre;
+        bool issuper;
+       
         public Usuarios()
         {
             InitializeComponent();
+           
         }
 
         private void Usuarios_Load(object sender, EventArgs e)
@@ -155,6 +152,15 @@ namespace AsistenciaSalud
             {
                 if (mgvusuarios.SelectedRows[0].Index >= 0)
                 {
+                    int index = mgvusuarios.CurrentCell.RowIndex;
+                    issuper = Convert.ToBoolean(mgvusuarios.Rows[index].Cells[8].Value.ToString());
+
+                    if (issuper)
+                    {
+                        MetroFramework.MetroMessageBox.Show(this, "Un super usaurio no puede ser eliminado", "Usuarios", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                    
                     if (MetroFramework.MetroMessageBox.Show(this, "¿Está seguro de querer eliminar el registro?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button3) == System.Windows.Forms.DialogResult.Yes)
                     {
                         Datos.DatosMaestro eliminar = new Datos.DatosMaestro();
@@ -264,6 +270,28 @@ namespace AsistenciaSalud
                 return false;
             else
                 return true;
+        }
+
+        private void mlcargarpermisos_Click(object sender, EventArgs e)
+        {
+            int index = mgvusuarios.CurrentCell.RowIndex;
+            issuper = Convert.ToBoolean(mgvusuarios.Rows[index].Cells[8].Value.ToString());
+            if (issuper)
+            {
+                MetroFramework.MetroMessageBox.Show(this, "No es necesario asignarle permisos a un super admin", "Permisos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+            else
+            {
+                AsignacionPermisoUsuarios ver = new AsignacionPermisoUsuarios(mtxtid.Text);
+                ver.ShowDialog();
+            }
+        }
+
+        private void mgvusuarios_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int index = mgvusuarios.CurrentCell.RowIndex;
+            issuper = Convert.ToBoolean(mgvusuarios.Rows[index].Cells[8].Value.ToString());
         }
 
         private void mtxtemail_Leave(object sender, EventArgs e)

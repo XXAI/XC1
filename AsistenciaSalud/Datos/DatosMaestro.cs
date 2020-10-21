@@ -192,6 +192,56 @@ namespace AsistenciaSalud.Datos
             return dato;
         }
 
+        public int EliminarTodosPermisos(String id)
+        {
+            SqlCommand cmd = new SqlCommand();
+
+            cmd.Parameters.AddWithValue("@id", Convert.ToInt32(id));
+
+            string cadenasql = "EliminarTodosPermisos";
+
+            cmd.CommandText = cadenasql;
+            cmd.Connection = conexion;
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            int dato = Convert.ToInt32(cmd.ExecuteNonQuery());
+            cmd.Dispose();
+            return dato;
+        }
+
+        public int InsertarPermisoUsuario(String permiso, String iduser)
+        {
+            try
+            {
+
+                SqlCommand cmd = new SqlCommand();
+                SqlDataAdapter adapter = new SqlDataAdapter();
+
+                cmd.Parameters.AddWithValue("@permiso", permiso);
+                cmd.Parameters.AddWithValue("@userid", iduser);
+              
+
+
+
+                String cadenasql = "InsertarPermisoUsuario";
+                cmd.Connection = conexion;
+                cmd.CommandText = cadenasql;
+                cmd.CommandType = CommandType.StoredProcedure;
+
+
+                adapter.SelectCommand = cmd;
+                int dato = Convert.ToInt32(cmd.ExecuteNonQuery());
+                cmd.Dispose();
+                return dato;
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
+        }
+
+
         public int InsertarPermiso(String idpermiso, String descripcion, String grupo)
         {
             try
@@ -248,6 +298,38 @@ namespace AsistenciaSalud.Datos
                 int dato = Convert.ToInt32(cmd.ExecuteNonQuery());
                 cmd.Dispose();
                 return dato;
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
+        }
+
+        public DataTable ConsultarPermisosUsurio(String idusuario)
+        {
+            try
+            {
+                DataTable tabla = new DataTable();
+                SqlCommand cmd = new SqlCommand();
+                SqlDataAdapter adapter = new SqlDataAdapter();
+
+                cmd.Parameters.AddWithValue("@idusuario", Convert.ToInt32(idusuario));
+              
+
+                String cadenasql = "ConsultarPermisosUsuario";
+                cmd.Connection = conexion;
+                cmd.CommandText = cadenasql;
+                cmd.CommandType = CommandType.StoredProcedure;
+
+
+                adapter.SelectCommand = cmd;
+                adapter.Fill(tabla);
+
+                cmd.Dispose();
+                adapter.Dispose();
+                conexion.Dispose();
+                return tabla;
             }
             catch (Exception e)
             {

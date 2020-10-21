@@ -74,6 +74,7 @@
             this.mtxtusername = new MetroFramework.Controls.MetroTextBox();
             this.lbusername = new System.Windows.Forms.Label();
             this.gbdatosgenerales = new System.Windows.Forms.GroupBox();
+            this.htmlLabel1 = new MetroFramework.Drawing.Html.HtmlLabel();
             this.mtxtid = new MetroFramework.Controls.MetroTextBox();
             this.lbid = new System.Windows.Forms.Label();
             this.mtxtemail = new MetroFramework.Controls.MetroTextBox();
@@ -86,7 +87,6 @@
             this.lbnombre = new System.Windows.Forms.Label();
             this.usersV2TableAdapter = new AsistenciaSalud.ChecadorMaestraDataSetUsuariosTableAdapters.usersV2TableAdapter();
             this.errorproveedor = new System.Windows.Forms.ErrorProvider(this.components);
-            this.htmlLabel1 = new MetroFramework.Drawing.Html.HtmlLabel();
             this.mlsalir = new MetroFramework.Controls.MetroTile();
             this.mlcargarpermisos = new MetroFramework.Controls.MetroTile();
             this.mlguardar = new MetroFramework.Controls.MetroTile();
@@ -215,7 +215,7 @@
             this.tplprincipal.ColumnCount = 3;
             this.tplprincipal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.60234F));
             this.tplprincipal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 67.39766F));
-            this.tplprincipal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 103F));
+            this.tplprincipal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 106F));
             this.tplprincipal.Controls.Add(this.pnmenu, 2, 0);
             this.tplprincipal.Controls.Add(this.mpanelbusqueda, 0, 0);
             this.tplprincipal.Controls.Add(this.mpcuerpo, 1, 0);
@@ -237,7 +237,7 @@
             this.pnmenu.Controls.Add(this.mleliminar);
             this.pnmenu.Controls.Add(this.mlmodificar);
             this.pnmenu.Controls.Add(this.mlagregar);
-            this.pnmenu.Location = new System.Drawing.Point(677, 3);
+            this.pnmenu.Location = new System.Drawing.Point(674, 3);
             this.pnmenu.Name = "pnmenu";
             this.pnmenu.Size = new System.Drawing.Size(85, 481);
             this.pnmenu.TabIndex = 36;
@@ -265,7 +265,7 @@
             this.mpanelbusqueda.HorizontalScrollbarSize = 10;
             this.mpanelbusqueda.Location = new System.Drawing.Point(3, 3);
             this.mpanelbusqueda.Name = "mpanelbusqueda";
-            this.mpanelbusqueda.Size = new System.Drawing.Size(214, 484);
+            this.mpanelbusqueda.Size = new System.Drawing.Size(213, 484);
             this.mpanelbusqueda.TabIndex = 37;
             this.mpanelbusqueda.VerticalScrollbarBarColor = true;
             this.mpanelbusqueda.VerticalScrollbarHighlightOnWheel = false;
@@ -331,8 +331,9 @@
             this.mgvusuarios.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.mgvusuarios.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.mgvusuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.mgvusuarios.Size = new System.Drawing.Size(214, 484);
+            this.mgvusuarios.Size = new System.Drawing.Size(213, 484);
             this.mgvusuarios.TabIndex = 2;
+            this.mgvusuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.mgvusuarios_CellClick);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -445,9 +446,9 @@
             this.mpcuerpo.HorizontalScrollbarBarColor = true;
             this.mpcuerpo.HorizontalScrollbarHighlightOnWheel = false;
             this.mpcuerpo.HorizontalScrollbarSize = 10;
-            this.mpcuerpo.Location = new System.Drawing.Point(223, 3);
+            this.mpcuerpo.Location = new System.Drawing.Point(222, 3);
             this.mpcuerpo.Name = "mpcuerpo";
-            this.mpcuerpo.Size = new System.Drawing.Size(448, 484);
+            this.mpcuerpo.Size = new System.Drawing.Size(446, 484);
             this.mpcuerpo.TabIndex = 38;
             this.mpcuerpo.VerticalScrollbarBarColor = true;
             this.mpcuerpo.VerticalScrollbarHighlightOnWheel = false;
@@ -612,6 +613,18 @@
             this.gbdatosgenerales.TabStop = false;
             this.gbdatosgenerales.Text = "Datos generales";
             // 
+            // htmlLabel1
+            // 
+            this.htmlLabel1.AutoScroll = true;
+            this.htmlLabel1.AutoScrollMinSize = new System.Drawing.Size(64, 23);
+            this.htmlLabel1.AutoSize = false;
+            this.htmlLabel1.BackColor = System.Drawing.SystemColors.Window;
+            this.htmlLabel1.Location = new System.Drawing.Point(36, 18);
+            this.htmlLabel1.Name = "htmlLabel1";
+            this.htmlLabel1.Size = new System.Drawing.Size(8, 8);
+            this.htmlLabel1.TabIndex = 13;
+            this.htmlLabel1.Text = "htmlLabel1";
+            // 
             // mtxtid
             // 
             this.mtxtid.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usersV2BindingSource, "id", true));
@@ -759,18 +772,6 @@
             this.errorproveedor.ContainerControl = this;
             this.errorproveedor.RightToLeft = true;
             // 
-            // htmlLabel1
-            // 
-            this.htmlLabel1.AutoScroll = true;
-            this.htmlLabel1.AutoScrollMinSize = new System.Drawing.Size(64, 23);
-            this.htmlLabel1.AutoSize = false;
-            this.htmlLabel1.BackColor = System.Drawing.SystemColors.Window;
-            this.htmlLabel1.Location = new System.Drawing.Point(36, 18);
-            this.htmlLabel1.Name = "htmlLabel1";
-            this.htmlLabel1.Size = new System.Drawing.Size(8, 8);
-            this.htmlLabel1.TabIndex = 13;
-            this.htmlLabel1.Text = "htmlLabel1";
-            // 
             // mlsalir
             // 
             this.mlsalir.ActiveControl = null;
@@ -803,6 +804,7 @@
             this.mlcargarpermisos.UseSelectable = true;
             this.mlcargarpermisos.UseStyleColors = true;
             this.mlcargarpermisos.UseTileImage = true;
+            this.mlcargarpermisos.Click += new System.EventHandler(this.mlcargarpermisos_Click);
             // 
             // mlguardar
             // 

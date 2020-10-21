@@ -34,17 +34,17 @@
             this.tslclue = new System.Windows.Forms.ToolStripLabel();
             this.mtcmenu = new MetroFramework.Controls.MetroTabControl();
             this.mtpempleados = new MetroFramework.Controls.MetroTabPage();
-            this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
-            this.mtcmenuprincipal = new MetroFramework.Controls.MetroTabPage();
-            this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
             this.metroTile1 = new MetroFramework.Controls.MetroTile();
+            this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
             this.mlconexiones = new MetroFramework.Controls.MetroTile();
             this.mltrabajadores = new MetroFramework.Controls.MetroTile();
             this.mlusuarios = new MetroFramework.Controls.MetroTile();
             this.mlpermisos = new MetroFramework.Controls.MetroTile();
+            this.mtcmenuprincipal = new MetroFramework.Controls.MetroTabPage();
             this.metroTile2 = new MetroFramework.Controls.MetroTile();
             this.metroTile3 = new MetroFramework.Controls.MetroTile();
             this.metroTile4 = new MetroFramework.Controls.MetroTile();
+            this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
             this.pbsalud = new System.Windows.Forms.PictureBox();
             this.close_principal = new System.Windows.Forms.PictureBox();
             this.toolStrip1.SuspendLayout();
@@ -107,6 +107,22 @@
             this.mtpempleados.VerticalScrollbarHighlightOnWheel = false;
             this.mtpempleados.VerticalScrollbarSize = 10;
             // 
+            // metroTile1
+            // 
+            this.metroTile1.ActiveControl = null;
+            this.metroTile1.Enabled = false;
+            this.metroTile1.Location = new System.Drawing.Point(14, 15);
+            this.metroTile1.Name = "metroTile1";
+            this.metroTile1.Size = new System.Drawing.Size(161, 150);
+            this.metroTile1.Style = MetroFramework.MetroColorStyle.Silver;
+            this.metroTile1.TabIndex = 13;
+            this.metroTile1.Text = "Administración";
+            this.metroTile1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.metroTile1.TileImage = global::AsistenciaSalud.Properties.Resources.workers;
+            this.metroTile1.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile1.UseSelectable = true;
+            this.metroTile1.UseTileImage = true;
+            // 
             // metroTabPage2
             // 
             this.metroTabPage2.Controls.Add(this.mlconexiones);
@@ -124,53 +140,6 @@
             this.metroTabPage2.VerticalScrollbarBarColor = true;
             this.metroTabPage2.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage2.VerticalScrollbarSize = 10;
-            // 
-            // mtcmenuprincipal
-            // 
-            this.mtcmenuprincipal.Controls.Add(this.metroTile2);
-            this.mtcmenuprincipal.Controls.Add(this.metroTile3);
-            this.mtcmenuprincipal.Controls.Add(this.metroTile4);
-            this.mtcmenuprincipal.HorizontalScrollbarBarColor = true;
-            this.mtcmenuprincipal.HorizontalScrollbarHighlightOnWheel = false;
-            this.mtcmenuprincipal.HorizontalScrollbarSize = 10;
-            this.mtcmenuprincipal.Location = new System.Drawing.Point(4, 38);
-            this.mtcmenuprincipal.Name = "mtcmenuprincipal";
-            this.mtcmenuprincipal.Size = new System.Drawing.Size(791, 303);
-            this.mtcmenuprincipal.TabIndex = 2;
-            this.mtcmenuprincipal.Text = "Reportes";
-            this.mtcmenuprincipal.VerticalScrollbarBarColor = true;
-            this.mtcmenuprincipal.VerticalScrollbarHighlightOnWheel = false;
-            this.mtcmenuprincipal.VerticalScrollbarSize = 10;
-            // 
-            // metroTabPage1
-            // 
-            this.metroTabPage1.HorizontalScrollbarBarColor = true;
-            this.metroTabPage1.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroTabPage1.HorizontalScrollbarSize = 10;
-            this.metroTabPage1.Location = new System.Drawing.Point(4, 38);
-            this.metroTabPage1.Name = "metroTabPage1";
-            this.metroTabPage1.Size = new System.Drawing.Size(791, 303);
-            this.metroTabPage1.TabIndex = 0;
-            this.metroTabPage1.Text = "Dispositivos";
-            this.metroTabPage1.VerticalScrollbarBarColor = true;
-            this.metroTabPage1.VerticalScrollbarHighlightOnWheel = false;
-            this.metroTabPage1.VerticalScrollbarSize = 10;
-            // 
-            // metroTile1
-            // 
-            this.metroTile1.ActiveControl = null;
-            this.metroTile1.Enabled = false;
-            this.metroTile1.Location = new System.Drawing.Point(14, 15);
-            this.metroTile1.Name = "metroTile1";
-            this.metroTile1.Size = new System.Drawing.Size(161, 150);
-            this.metroTile1.Style = MetroFramework.MetroColorStyle.Silver;
-            this.metroTile1.TabIndex = 13;
-            this.metroTile1.Text = "Administración";
-            this.metroTile1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.metroTile1.TileImage = global::AsistenciaSalud.Properties.Resources.workers;
-            this.metroTile1.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.metroTile1.UseSelectable = true;
-            this.metroTile1.UseTileImage = true;
             // 
             // mlconexiones
             // 
@@ -235,7 +204,25 @@
             this.mlpermisos.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.mlpermisos.UseSelectable = true;
             this.mlpermisos.UseTileImage = true;
+            this.mlpermisos.Visible = false;
             this.mlpermisos.Click += new System.EventHandler(this.mlpermisos_Click);
+            // 
+            // mtcmenuprincipal
+            // 
+            this.mtcmenuprincipal.Controls.Add(this.metroTile2);
+            this.mtcmenuprincipal.Controls.Add(this.metroTile3);
+            this.mtcmenuprincipal.Controls.Add(this.metroTile4);
+            this.mtcmenuprincipal.HorizontalScrollbarBarColor = true;
+            this.mtcmenuprincipal.HorizontalScrollbarHighlightOnWheel = false;
+            this.mtcmenuprincipal.HorizontalScrollbarSize = 10;
+            this.mtcmenuprincipal.Location = new System.Drawing.Point(4, 38);
+            this.mtcmenuprincipal.Name = "mtcmenuprincipal";
+            this.mtcmenuprincipal.Size = new System.Drawing.Size(791, 303);
+            this.mtcmenuprincipal.TabIndex = 2;
+            this.mtcmenuprincipal.Text = "Reportes";
+            this.mtcmenuprincipal.VerticalScrollbarBarColor = true;
+            this.mtcmenuprincipal.VerticalScrollbarHighlightOnWheel = false;
+            this.mtcmenuprincipal.VerticalScrollbarSize = 10;
             // 
             // metroTile2
             // 
@@ -284,6 +271,20 @@
             this.metroTile4.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroTile4.UseSelectable = true;
             this.metroTile4.UseTileImage = true;
+            // 
+            // metroTabPage1
+            // 
+            this.metroTabPage1.HorizontalScrollbarBarColor = true;
+            this.metroTabPage1.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroTabPage1.HorizontalScrollbarSize = 10;
+            this.metroTabPage1.Location = new System.Drawing.Point(4, 38);
+            this.metroTabPage1.Name = "metroTabPage1";
+            this.metroTabPage1.Size = new System.Drawing.Size(791, 303);
+            this.metroTabPage1.TabIndex = 0;
+            this.metroTabPage1.Text = "Dispositivos";
+            this.metroTabPage1.VerticalScrollbarBarColor = true;
+            this.metroTabPage1.VerticalScrollbarHighlightOnWheel = false;
+            this.metroTabPage1.VerticalScrollbarSize = 10;
             // 
             // pbsalud
             // 

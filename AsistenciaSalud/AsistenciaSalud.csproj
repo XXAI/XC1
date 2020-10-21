@@ -65,6 +65,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AsignacionPermisoUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AsignacionPermisoUsuarios.Designer.cs">
+      <DependentUpon>AsignacionPermisoUsuarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChecadorMaestraDataSetClues.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -122,6 +128,9 @@
     <Compile Include="Usuarios.Designer.cs">
       <DependentUpon>Usuarios.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AsignacionPermisoUsuarios.resx">
+      <DependentUpon>AsignacionPermisoUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Clues.resx">
       <DependentUpon>Clues.cs</DependentUpon>
     </EmbeddedResource>
@@ -199,6 +208,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="reconocimiento-biometrico.ico" />
+    <None Include="Resources\anterior.png" />
+    <None Include="Resources\siguiente.png" />
     <None Include="Resources\clues.png" />
   </ItemGroup>
   <ItemGroup>

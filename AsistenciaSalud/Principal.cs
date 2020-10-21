@@ -72,6 +72,14 @@ namespace AsistenciaSalud
 
             mlpermisos.Enabled = true;
 
+            if (isroot)
+            {
+                mlpermisos.Visible = true;
+            }
+
+            else
+            { }
+
 
         }
 

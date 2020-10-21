@@ -64,3 +64,5 @@ D:\Visual Studio\XC1\AsistenciaSalud\obj\Debug\AsistenciaSalud.csproj.CoreCompil
 D:\Visual Studio\XC1\AsistenciaSalud\obj\Debug\AsistenciaSalud.csproj.CopyComplete
 D:\Visual Studio\XC1\AsistenciaSalud\obj\Debug\AsistenciaSalud.exe
 D:\Visual Studio\XC1\AsistenciaSalud\obj\Debug\AsistenciaSalud.pdb
+D:\Visual Studio\XC1\AsistenciaSalud\obj\Debug\AsistenciaSalud.csprojAssemblyReference.cache
+D:\Visual Studio\XC1\AsistenciaSalud\obj\Debug\AsistenciaSalud.AsignacionPermisoUsuarios.resources
