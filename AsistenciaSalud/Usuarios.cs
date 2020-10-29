@@ -134,15 +134,28 @@ namespace AsistenciaSalud
 
         private void mlmodificar_Click(object sender, EventArgs e)
         {
-            if (mgvusuarios.SelectedRows[0].Index >= 0)
+            if (ValidarVacios())
             {
-                Agregar = false;
-                password = mtxtpassword.Text;
-                cluenombre = cbclue.Text;
-                HabilitaCaptura(true);
+                if (mgvusuarios.SelectedRows[0].Index >= 0)
+                {
+                    Agregar = false;
+                    password = mtxtpassword.Text;
+                    cluenombre = cbclue.Text;
+                    HabilitaCaptura(true);
+                }
+                else
+                    MetroFramework.MetroMessageBox.Show(this, "Error de seleccion, elija un elemento de la lista", "Error de seleccion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
                 MetroFramework.MetroMessageBox.Show(this, "Error de seleccion, elija un elemento de la lista", "Error de seleccion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        private bool ValidarVacios()
+        {
+            if (mtxtnombre.Text == "")
+                return false;
+            else
+                return true;
 
         }
 

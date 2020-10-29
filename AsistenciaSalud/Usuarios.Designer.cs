@@ -215,7 +215,7 @@
             this.tplprincipal.ColumnCount = 3;
             this.tplprincipal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.60234F));
             this.tplprincipal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 67.39766F));
-            this.tplprincipal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 106F));
+            this.tplprincipal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 90F));
             this.tplprincipal.Controls.Add(this.pnmenu, 2, 0);
             this.tplprincipal.Controls.Add(this.mpanelbusqueda, 0, 0);
             this.tplprincipal.Controls.Add(this.mpcuerpo, 1, 0);
@@ -237,7 +237,7 @@
             this.pnmenu.Controls.Add(this.mleliminar);
             this.pnmenu.Controls.Add(this.mlmodificar);
             this.pnmenu.Controls.Add(this.mlagregar);
-            this.pnmenu.Location = new System.Drawing.Point(674, 3);
+            this.pnmenu.Location = new System.Drawing.Point(690, 3);
             this.pnmenu.Name = "pnmenu";
             this.pnmenu.Size = new System.Drawing.Size(85, 481);
             this.pnmenu.TabIndex = 36;
@@ -265,7 +265,7 @@
             this.mpanelbusqueda.HorizontalScrollbarSize = 10;
             this.mpanelbusqueda.Location = new System.Drawing.Point(3, 3);
             this.mpanelbusqueda.Name = "mpanelbusqueda";
-            this.mpanelbusqueda.Size = new System.Drawing.Size(213, 484);
+            this.mpanelbusqueda.Size = new System.Drawing.Size(218, 484);
             this.mpanelbusqueda.TabIndex = 37;
             this.mpanelbusqueda.VerticalScrollbarBarColor = true;
             this.mpanelbusqueda.VerticalScrollbarHighlightOnWheel = false;
@@ -331,7 +331,7 @@
             this.mgvusuarios.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.mgvusuarios.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.mgvusuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.mgvusuarios.Size = new System.Drawing.Size(213, 484);
+            this.mgvusuarios.Size = new System.Drawing.Size(218, 484);
             this.mgvusuarios.TabIndex = 2;
             this.mgvusuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.mgvusuarios_CellClick);
             // 
@@ -446,9 +446,9 @@
             this.mpcuerpo.HorizontalScrollbarBarColor = true;
             this.mpcuerpo.HorizontalScrollbarHighlightOnWheel = false;
             this.mpcuerpo.HorizontalScrollbarSize = 10;
-            this.mpcuerpo.Location = new System.Drawing.Point(222, 3);
+            this.mpcuerpo.Location = new System.Drawing.Point(227, 3);
             this.mpcuerpo.Name = "mpcuerpo";
-            this.mpcuerpo.Size = new System.Drawing.Size(446, 484);
+            this.mpcuerpo.Size = new System.Drawing.Size(457, 484);
             this.mpcuerpo.TabIndex = 38;
             this.mpcuerpo.VerticalScrollbarBarColor = true;
             this.mpcuerpo.VerticalScrollbarHighlightOnWheel = false;

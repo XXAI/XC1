@@ -44,5 +44,27 @@ namespace AsistenciaSalud.Properties {
                 return ((string)(this["Maestra"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Server=tcp:10.10.10.250,1433;Database=BancodeSangre;User ID=sa;Password=DIABLO040" +
+            "9!!;")]
+        public string CSSSA018810 {
+            get {
+                return ((string)(this["CSSSA018810"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Server=tcp:10.10.10.250,1433;Database=gomezmaza;User ID=sa;Password=DIABLO0409!!;" +
+            "")]
+        public string CSSSA019954 {
+            get {
+                return ((string)(this["CSSSA019954"]));
+            }
+        }
     }
 }

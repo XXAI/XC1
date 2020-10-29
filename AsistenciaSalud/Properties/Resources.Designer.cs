@@ -93,6 +93,16 @@ namespace AsistenciaSalud.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap biometrico112 {
+            get {
+                object obj = ResourceManager.GetObject("biometrico112", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap calendar {
             get {
                 object obj = ResourceManager.GetObject("calendar", resourceCulture);
@@ -166,6 +176,16 @@ namespace AsistenciaSalud.Properties {
         internal static System.Drawing.Bitmap permisos {
             get {
                 object obj = ResourceManager.GetObject("permisos", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap registros {
+            get {
+                object obj = ResourceManager.GetObject("registros", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -66,3 +66,4 @@ D:\Visual Studio\XC1\AsistenciaSalud\obj\Debug\AsistenciaSalud.exe
 D:\Visual Studio\XC1\AsistenciaSalud\obj\Debug\AsistenciaSalud.pdb
 D:\Visual Studio\XC1\AsistenciaSalud\obj\Debug\AsistenciaSalud.csprojAssemblyReference.cache
 D:\Visual Studio\XC1\AsistenciaSalud\obj\Debug\AsistenciaSalud.AsignacionPermisoUsuarios.resources
+D:\Visual Studio\XC1\AsistenciaSalud\obj\Debug\AsistenciaSalud.AdministradorRelojes.resources

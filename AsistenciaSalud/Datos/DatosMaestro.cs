@@ -407,6 +407,23 @@ namespace AsistenciaSalud.Datos
             }
         }
 
+        public int EliminarClue(String id)
+        {
+            SqlCommand cmd = new SqlCommand();
+
+            cmd.Parameters.AddWithValue("@id", Convert.ToInt32(id));
+
+            string cadenasql = "EliminarClue";
+
+            cmd.CommandText = cadenasql;
+            cmd.Connection = conexion;
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            int dato = Convert.ToInt32(cmd.ExecuteNonQuery());
+            cmd.Dispose();
+            return dato;
+        }
+
         #endregion
 
         #region encrypt

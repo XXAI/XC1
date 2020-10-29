@@ -220,5 +220,30 @@ namespace AsistenciaSalud
                 return true;
         }
 
+        private void mleliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (mgclues.SelectedRows[0].Index >= 0)
+                {
+                    if (MetroFramework.MetroMessageBox.Show(this, "¿Está seguro de querer eliminar el registro?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button3) == System.Windows.Forms.DialogResult.Yes)
+                    {
+                        Datos.DatosMaestro eliminar = new Datos.DatosMaestro();
+                        int valor = eliminar.EliminarClue(mtxtid.Text);
+                        if (valor > 0)
+                            MetroFramework.MetroMessageBox.Show(this, "Clue eliminda con exito", "Confirmación de eliminación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        actualizar();
+                    }
+                    else
+                       MetroFramework.MetroMessageBox.Show(this, "La clue no a podido ser eliminada", "Clues", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                }
+            }
+
+            catch (Exception ex)
+            {
+                MetroFramework.MetroMessageBox.Show(this, ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

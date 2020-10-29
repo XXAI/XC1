@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Clues));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -58,12 +58,6 @@
             this.mlagregar = new MetroFramework.Controls.MetroTile();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.mgclues = new MetroFramework.Controls.MetroGrid();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rutaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cluesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cluesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.checadorMaestraDataSetClues = new AsistenciaSalud.ChecadorMaestraDataSetClues();
             this.gbclues = new System.Windows.Forms.GroupBox();
             this.cbclue = new System.Windows.Forms.ComboBox();
             this.lbclue = new System.Windows.Forms.Label();
@@ -73,20 +67,26 @@
             this.lbdescripcion = new System.Windows.Forms.Label();
             this.mtxtid = new MetroFramework.Controls.MetroTextBox();
             this.lbid = new System.Windows.Forms.Label();
-            this.cluesTableAdapter = new AsistenciaSalud.ChecadorMaestraDataSetCluesTableAdapters.CluesTableAdapter();
             this.pbsalud = new System.Windows.Forms.PictureBox();
             this.close_principal = new System.Windows.Forms.PictureBox();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rutaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cluesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cluesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.checadorMaestraDataSetClues = new AsistenciaSalud.ChecadorMaestraDataSetClues();
+            this.cluesTableAdapter = new AsistenciaSalud.ChecadorMaestraDataSetCluesTableAdapters.CluesTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.pnmenu.SuspendLayout();
             this.metroPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mgclues)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cluesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checadorMaestraDataSetClues)).BeginInit();
             this.gbclues.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbsalud)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.close_principal)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cluesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checadorMaestraDataSetClues)).BeginInit();
             this.SuspendLayout();
             // 
             // bindingNavigator1
@@ -212,7 +212,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36.68122F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 63.31878F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 92F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 94F));
             this.tableLayoutPanel1.Controls.Add(this.pnmenu, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.metroPanel1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.gbclues, 1, 0);
@@ -234,7 +234,7 @@
             this.pnmenu.Controls.Add(this.mleliminar);
             this.pnmenu.Controls.Add(this.mlmodificar);
             this.pnmenu.Controls.Add(this.mlagregar);
-            this.pnmenu.Location = new System.Drawing.Point(689, 3);
+            this.pnmenu.Location = new System.Drawing.Point(687, 3);
             this.pnmenu.Name = "pnmenu";
             this.pnmenu.Size = new System.Drawing.Size(85, 481);
             this.pnmenu.TabIndex = 36;
@@ -333,6 +333,7 @@
             this.mleliminar.UseSelectable = true;
             this.mleliminar.UseStyleColors = true;
             this.mleliminar.UseTileImage = true;
+            this.mleliminar.Click += new System.EventHandler(this.mleliminar_Click);
             // 
             // mlmodificar
             // 
@@ -397,14 +398,14 @@
             this.mgclues.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.mgclues.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.mgclues.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.mgclues.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.mgclues.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.mgclues.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.mgclues.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
@@ -412,14 +413,14 @@
             this.rutaDataGridViewTextBoxColumn,
             this.cluesDataGridViewTextBoxColumn});
             this.mgclues.DataSource = this.cluesBindingSource;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.mgclues.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.mgclues.DefaultCellStyle = dataGridViewCellStyle5;
             this.mgclues.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mgclues.EnableHeadersVisualStyles = false;
             this.mgclues.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -428,59 +429,18 @@
             this.mgclues.Name = "mgclues";
             this.mgclues.ReadOnly = true;
             this.mgclues.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.mgclues.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.mgclues.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.mgclues.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.mgclues.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.mgclues.Size = new System.Drawing.Size(245, 484);
             this.mgclues.TabIndex = 2;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // descripcionDataGridViewTextBoxColumn
-            // 
-            this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "descripcion";
-            this.descripcionDataGridViewTextBoxColumn.HeaderText = "descripción";
-            this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
-            this.descripcionDataGridViewTextBoxColumn.ReadOnly = true;
-            this.descripcionDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // rutaDataGridViewTextBoxColumn
-            // 
-            this.rutaDataGridViewTextBoxColumn.DataPropertyName = "ruta";
-            this.rutaDataGridViewTextBoxColumn.HeaderText = "ruta";
-            this.rutaDataGridViewTextBoxColumn.Name = "rutaDataGridViewTextBoxColumn";
-            this.rutaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.rutaDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // cluesDataGridViewTextBoxColumn
-            // 
-            this.cluesDataGridViewTextBoxColumn.DataPropertyName = "clues";
-            this.cluesDataGridViewTextBoxColumn.HeaderText = "Clue";
-            this.cluesDataGridViewTextBoxColumn.Name = "cluesDataGridViewTextBoxColumn";
-            this.cluesDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // cluesBindingSource
-            // 
-            this.cluesBindingSource.DataMember = "Clues";
-            this.cluesBindingSource.DataSource = this.checadorMaestraDataSetClues;
-            // 
-            // checadorMaestraDataSetClues
-            // 
-            this.checadorMaestraDataSetClues.DataSetName = "ChecadorMaestraDataSetClues";
-            this.checadorMaestraDataSetClues.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // gbclues
             // 
@@ -494,7 +454,7 @@
             this.gbclues.Controls.Add(this.lbid);
             this.gbclues.Location = new System.Drawing.Point(254, 3);
             this.gbclues.Name = "gbclues";
-            this.gbclues.Size = new System.Drawing.Size(429, 181);
+            this.gbclues.Size = new System.Drawing.Size(427, 181);
             this.gbclues.TabIndex = 38;
             this.gbclues.TabStop = false;
             this.gbclues.Text = "Datos generales";
@@ -605,10 +565,6 @@
             this.lbid.TabIndex = 13;
             this.lbid.Text = "Clave";
             // 
-            // cluesTableAdapter
-            // 
-            this.cluesTableAdapter.ClearBeforeFill = true;
-            // 
             // pbsalud
             // 
             this.pbsalud.Image = ((System.Drawing.Image)(resources.GetObject("pbsalud.Image")));
@@ -630,6 +586,51 @@
             this.close_principal.TabIndex = 21;
             this.close_principal.TabStop = false;
             this.close_principal.Click += new System.EventHandler(this.close_principal_Click);
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // descripcionDataGridViewTextBoxColumn
+            // 
+            this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "descripcion";
+            this.descripcionDataGridViewTextBoxColumn.HeaderText = "descripción";
+            this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
+            this.descripcionDataGridViewTextBoxColumn.ReadOnly = true;
+            this.descripcionDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // rutaDataGridViewTextBoxColumn
+            // 
+            this.rutaDataGridViewTextBoxColumn.DataPropertyName = "ruta";
+            this.rutaDataGridViewTextBoxColumn.HeaderText = "ruta";
+            this.rutaDataGridViewTextBoxColumn.Name = "rutaDataGridViewTextBoxColumn";
+            this.rutaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.rutaDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // cluesDataGridViewTextBoxColumn
+            // 
+            this.cluesDataGridViewTextBoxColumn.DataPropertyName = "clues";
+            this.cluesDataGridViewTextBoxColumn.HeaderText = "Clue";
+            this.cluesDataGridViewTextBoxColumn.Name = "cluesDataGridViewTextBoxColumn";
+            this.cluesDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // cluesBindingSource
+            // 
+            this.cluesBindingSource.DataMember = "Clues";
+            this.cluesBindingSource.DataSource = this.checadorMaestraDataSetClues;
+            // 
+            // checadorMaestraDataSetClues
+            // 
+            this.checadorMaestraDataSetClues.DataSetName = "ChecadorMaestraDataSetClues";
+            this.checadorMaestraDataSetClues.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // cluesTableAdapter
+            // 
+            this.cluesTableAdapter.ClearBeforeFill = true;
             // 
             // Clues
             // 
@@ -655,12 +656,12 @@
             this.pnmenu.ResumeLayout(false);
             this.metroPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.mgclues)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cluesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checadorMaestraDataSetClues)).EndInit();
             this.gbclues.ResumeLayout(false);
             this.gbclues.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbsalud)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.close_principal)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cluesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checadorMaestraDataSetClues)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
