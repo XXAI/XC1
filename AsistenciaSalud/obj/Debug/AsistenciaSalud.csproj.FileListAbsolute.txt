@@ -67,3 +67,26 @@ D:\Visual Studio\XC1\AsistenciaSalud\obj\Debug\AsistenciaSalud.pdb
 D:\Visual Studio\XC1\AsistenciaSalud\obj\Debug\AsistenciaSalud.csprojAssemblyReference.cache
 D:\Visual Studio\XC1\AsistenciaSalud\obj\Debug\AsistenciaSalud.AsignacionPermisoUsuarios.resources
 D:\Visual Studio\XC1\AsistenciaSalud\obj\Debug\AsistenciaSalud.AdministradorRelojes.resources
+\\Mac\Home\Documents\Documentos - MacBook Pro de miguel\Visual Studio 2017\XC1\AsistenciaSalud\bin\Debug\AsistenciaSalud.exe.config
+\\Mac\Home\Documents\Documentos - MacBook Pro de miguel\Visual Studio 2017\XC1\AsistenciaSalud\bin\Debug\AsistenciaSalud.exe
+\\Mac\Home\Documents\Documentos - MacBook Pro de miguel\Visual Studio 2017\XC1\AsistenciaSalud\bin\Debug\AsistenciaSalud.pdb
+\\Mac\Home\Documents\Documentos - MacBook Pro de miguel\Visual Studio 2017\XC1\AsistenciaSalud\bin\Debug\MetroFramework.Design.dll
+\\Mac\Home\Documents\Documentos - MacBook Pro de miguel\Visual Studio 2017\XC1\AsistenciaSalud\bin\Debug\MetroFramework.dll
+\\Mac\Home\Documents\Documentos - MacBook Pro de miguel\Visual Studio 2017\XC1\AsistenciaSalud\bin\Debug\MetroFramework.Fonts.dll
+\\Mac\Home\Documents\Documentos - MacBook Pro de miguel\Visual Studio 2017\XC1\AsistenciaSalud\obj\Debug\Interop.zkemkeeper.dll
+\\Mac\Home\Documents\Documentos - MacBook Pro de miguel\Visual Studio 2017\XC1\AsistenciaSalud\obj\Debug\AsistenciaSalud.csproj.ResolveComReference.cache
+\\Mac\Home\Documents\Documentos - MacBook Pro de miguel\Visual Studio 2017\XC1\AsistenciaSalud\obj\Debug\AsistenciaSalud.AdministradorRelojes.resources
+\\Mac\Home\Documents\Documentos - MacBook Pro de miguel\Visual Studio 2017\XC1\AsistenciaSalud\obj\Debug\AsistenciaSalud.AsignacionPermisoUsuarios.resources
+\\Mac\Home\Documents\Documentos - MacBook Pro de miguel\Visual Studio 2017\XC1\AsistenciaSalud\obj\Debug\AsistenciaSalud.Clues.resources
+\\Mac\Home\Documents\Documentos - MacBook Pro de miguel\Visual Studio 2017\XC1\AsistenciaSalud\obj\Debug\AsistenciaSalud.fom_message.filtro_form.resources
+\\Mac\Home\Documents\Documentos - MacBook Pro de miguel\Visual Studio 2017\XC1\AsistenciaSalud\obj\Debug\AsistenciaSalud.Form_Login.resources
+\\Mac\Home\Documents\Documentos - MacBook Pro de miguel\Visual Studio 2017\XC1\AsistenciaSalud\obj\Debug\AsistenciaSalud.Permisos.resources
+\\Mac\Home\Documents\Documentos - MacBook Pro de miguel\Visual Studio 2017\XC1\AsistenciaSalud\obj\Debug\AsistenciaSalud.Principal.resources
+\\Mac\Home\Documents\Documentos - MacBook Pro de miguel\Visual Studio 2017\XC1\AsistenciaSalud\obj\Debug\AsistenciaSalud.Properties.Resources.resources
+\\Mac\Home\Documents\Documentos - MacBook Pro de miguel\Visual Studio 2017\XC1\AsistenciaSalud\obj\Debug\AsistenciaSalud.SeleccionarClue.resources
+\\Mac\Home\Documents\Documentos - MacBook Pro de miguel\Visual Studio 2017\XC1\AsistenciaSalud\obj\Debug\AsistenciaSalud.Usuarios.resources
+\\Mac\Home\Documents\Documentos - MacBook Pro de miguel\Visual Studio 2017\XC1\AsistenciaSalud\obj\Debug\AsistenciaSalud.csproj.GenerateResource.cache
+\\Mac\Home\Documents\Documentos - MacBook Pro de miguel\Visual Studio 2017\XC1\AsistenciaSalud\obj\Debug\AsistenciaSalud.csproj.CoreCompileInputs.cache
+\\Mac\Home\Documents\Documentos - MacBook Pro de miguel\Visual Studio 2017\XC1\AsistenciaSalud\obj\Debug\AsistenciaSalud.csproj.CopyComplete
+\\Mac\Home\Documents\Documentos - MacBook Pro de miguel\Visual Studio 2017\XC1\AsistenciaSalud\obj\Debug\AsistenciaSalud.exe
+\\Mac\Home\Documents\Documentos - MacBook Pro de miguel\Visual Studio 2017\XC1\AsistenciaSalud\obj\Debug\AsistenciaSalud.pdb

@@ -39,10 +39,6 @@
     <Reference Include="Bunifu_UI_v1.5.3">
       <HintPath>..\..\..\..\..\Downloads\windows forms\Bunifu_UI_v1.5.3\Bunifu_UI_v1.5.3.dll</HintPath>
     </Reference>
-    <Reference Include="Interop.zkemkeeper">
-      <HintPath>..\..\sincronizacion-de-logs-master\SincronizacionReloj\Resources\Interop.zkemkeeper.dll</HintPath>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </Reference>
     <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <HintPath>..\packages\Winform.Metroframework.1.4.0\lib\net20\MetroFramework.dll</HintPath>
     </Reference>
@@ -281,6 +277,17 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\permisos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="zkemkeeper">
+      <Guid>{FE9DED34-E159-408E-8490-B720A5E632C7}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
