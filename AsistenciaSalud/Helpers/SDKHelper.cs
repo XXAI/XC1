@@ -14,6 +14,7 @@ namespace AsistenciaSalud.Helpers
     public class SDKHelper
     {
         public CZKEM axCZKEM1 = new CZKEM();
+        
         public static event MessageEvent onMessage;
 
         public List<Employee> employeeList = new List<Employee>();

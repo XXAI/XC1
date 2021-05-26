@@ -2,12 +2,6 @@ c:\users\mario\documents\visual studio 2015\Projects\Sln_AsistenciaSalud\Asisten
 c:\users\mario\documents\visual studio 2015\Projects\Sln_AsistenciaSalud\AsistenciaSalud\bin\Debug\AsistenciaSalud.exe
 c:\users\mario\documents\visual studio 2015\Projects\Sln_AsistenciaSalud\AsistenciaSalud\bin\Debug\AsistenciaSalud.pdb
 c:\users\mario\documents\visual studio 2015\Projects\Sln_AsistenciaSalud\AsistenciaSalud\bin\Debug\Bunifu_UI_v1.5.3.dll
-c:\users\mario\documents\visual studio 2015\Projects\Sln_AsistenciaSalud\AsistenciaSalud\bin\Debug\Prj_Capa_Datos.dll
-c:\users\mario\documents\visual studio 2015\Projects\Sln_AsistenciaSalud\AsistenciaSalud\bin\Debug\Prj_Capa_Entidad.dll
-c:\users\mario\documents\visual studio 2015\Projects\Sln_AsistenciaSalud\AsistenciaSalud\bin\Debug\Prj_Capa_Negocio.dll
-c:\users\mario\documents\visual studio 2015\Projects\Sln_AsistenciaSalud\AsistenciaSalud\bin\Debug\Prj_Capa_Datos.pdb
-c:\users\mario\documents\visual studio 2015\Projects\Sln_AsistenciaSalud\AsistenciaSalud\bin\Debug\Prj_Capa_Entidad.pdb
-c:\users\mario\documents\visual studio 2015\Projects\Sln_AsistenciaSalud\AsistenciaSalud\bin\Debug\Prj_Capa_Negocio.pdb
 c:\users\mario\documents\visual studio 2015\Projects\Sln_AsistenciaSalud\AsistenciaSalud\obj\Debug\AsistenciaSalud.csprojResolveAssemblyReference.cache
 c:\users\mario\documents\visual studio 2015\Projects\Sln_AsistenciaSalud\AsistenciaSalud\obj\Debug\AsistenciaSalud.Properties.Resources.resources
 c:\users\mario\documents\visual studio 2015\Projects\Sln_AsistenciaSalud\AsistenciaSalud\obj\Debug\AsistenciaSalud.csproj.GenerateResource.Cache
@@ -90,3 +84,66 @@ D:\Visual Studio\XC1\AsistenciaSalud\obj\Debug\AsistenciaSalud.AdministradorRelo
 \\Mac\Home\Documents\Documentos - MacBook Pro de miguel\Visual Studio 2017\XC1\AsistenciaSalud\obj\Debug\AsistenciaSalud.csproj.CopyComplete
 \\Mac\Home\Documents\Documentos - MacBook Pro de miguel\Visual Studio 2017\XC1\AsistenciaSalud\obj\Debug\AsistenciaSalud.exe
 \\Mac\Home\Documents\Documentos - MacBook Pro de miguel\Visual Studio 2017\XC1\AsistenciaSalud\obj\Debug\AsistenciaSalud.pdb
+C:\Users\mario\Documents\Visual Studio 2015\Projects\Sln_AsistenciaSalud\AsistenciaSalud\obj\Debug\Interop.zkemkeeper.dll
+C:\Users\mario\Documents\Visual Studio 2015\Projects\Sln_AsistenciaSalud\AsistenciaSalud\obj\Debug\AsistenciaSalud.csproj.ResolveComReference.cache
+C:\Users\mario\Documents\Visual Studio 2015\Projects\Sln_AsistenciaSalud\AsistenciaSalud\obj\Debug\AsistenciaSalud.AdministradorRelojes.resources
+C:\Users\mario\Documents\Visual Studio 2015\Projects\Sln_AsistenciaSalud\AsistenciaSalud\obj\Debug\AsistenciaSalud.AsignacionPermisoUsuarios.resources
+C:\Users\mario\Documents\Visual Studio 2015\Projects\Sln_AsistenciaSalud\AsistenciaSalud\obj\Debug\AsistenciaSalud.Clues.resources
+C:\Users\mario\Documents\Visual Studio 2015\Projects\Sln_AsistenciaSalud\AsistenciaSalud\obj\Debug\AsistenciaSalud.Permisos.resources
+C:\Users\mario\Documents\Visual Studio 2015\Projects\Sln_AsistenciaSalud\AsistenciaSalud\obj\Debug\AsistenciaSalud.Principal.resources
+C:\Users\mario\Documents\Visual Studio 2015\Projects\Sln_AsistenciaSalud\AsistenciaSalud\obj\Debug\AsistenciaSalud.SeleccionarClue.resources
+C:\Users\mario\Documents\Visual Studio 2015\Projects\Sln_AsistenciaSalud\AsistenciaSalud\obj\Debug\AsistenciaSalud.Usuarios.resources
+C:\Users\mario\Documents\Visual Studio 2015\Projects\Sln_AsistenciaSalud\AsistenciaSalud\obj\Debug\Interop.ZKFPEngXControl.dll
+C:\Users\mario\Documents\Visual Studio 2015\Projects\Sln_AsistenciaSalud\AsistenciaSalud\bin\Debug\MetroFramework.Design.dll
+C:\Users\Salud\source\repos\Sln_AsistenciaSalud\AsistenciaSalud\obj\Debug\AsistenciaSalud.csprojAssemblyReference.cache
+C:\Users\Salud\source\repos\Sln_AsistenciaSalud\AsistenciaSalud\obj\Debug\Interop.zkemkeeper.dll
+C:\Users\Salud\source\repos\Sln_AsistenciaSalud\AsistenciaSalud\obj\Debug\Interop.ZKFPEngXControl.dll
+C:\Users\Salud\source\repos\Sln_AsistenciaSalud\AsistenciaSalud\obj\Debug\AsistenciaSalud.csproj.ResolveComReference.cache
+C:\Users\Salud\source\repos\Sln_AsistenciaSalud\AsistenciaSalud\obj\Debug\AsistenciaSalud.AdministradorRelojes.resources
+C:\Users\Salud\source\repos\Sln_AsistenciaSalud\AsistenciaSalud\obj\Debug\AsistenciaSalud.AsignacionPermisoUsuarios.resources
+C:\Users\Salud\source\repos\Sln_AsistenciaSalud\AsistenciaSalud\obj\Debug\AsistenciaSalud.Clues.resources
+C:\Users\Salud\source\repos\Sln_AsistenciaSalud\AsistenciaSalud\obj\Debug\AsistenciaSalud.fom_message.filtro_form.resources
+C:\Users\Salud\source\repos\Sln_AsistenciaSalud\AsistenciaSalud\obj\Debug\AsistenciaSalud.Form_Login.resources
+C:\Users\Salud\source\repos\Sln_AsistenciaSalud\AsistenciaSalud\obj\Debug\AsistenciaSalud.Permisos.resources
+C:\Users\Salud\source\repos\Sln_AsistenciaSalud\AsistenciaSalud\obj\Debug\AsistenciaSalud.Principal.resources
+C:\Users\Salud\source\repos\Sln_AsistenciaSalud\AsistenciaSalud\obj\Debug\AsistenciaSalud.Properties.Resources.resources
+C:\Users\Salud\source\repos\Sln_AsistenciaSalud\AsistenciaSalud\obj\Debug\AsistenciaSalud.SeleccionarClue.resources
+C:\Users\Salud\source\repos\Sln_AsistenciaSalud\AsistenciaSalud\obj\Debug\AsistenciaSalud.Usuarios.resources
+C:\Users\Salud\source\repos\Sln_AsistenciaSalud\AsistenciaSalud\obj\Debug\AsistenciaSalud.csproj.GenerateResource.cache
+C:\Users\Salud\source\repos\Sln_AsistenciaSalud\AsistenciaSalud\obj\Debug\AsistenciaSalud.csproj.CoreCompileInputs.cache
+C:\Users\Salud\source\repos\Sln_AsistenciaSalud\AsistenciaSalud\obj\Debug\AsistenciaSalud.exe
+C:\Users\Salud\source\repos\Sln_AsistenciaSalud\AsistenciaSalud\obj\Debug\AsistenciaSalud.pdb
+C:\Users\Salud\source\repos\Sln_AsistenciaSalud\AsistenciaSalud\bin\Debug\AsistenciaSalud.exe.config
+C:\Users\Salud\source\repos\Sln_AsistenciaSalud\AsistenciaSalud\bin\Debug\AsistenciaSalud.exe
+C:\Users\Salud\source\repos\Sln_AsistenciaSalud\AsistenciaSalud\bin\Debug\AsistenciaSalud.pdb
+C:\Users\Salud\source\repos\Sln_AsistenciaSalud\AsistenciaSalud\bin\Debug\MetroFramework.Design.dll
+C:\Users\Salud\source\repos\Sln_AsistenciaSalud\AsistenciaSalud\bin\Debug\MetroFramework.dll
+C:\Users\Salud\source\repos\Sln_AsistenciaSalud\AsistenciaSalud\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\Salud\source\repos\Sln_AsistenciaSalud\AsistenciaSalud\obj\Debug\AsistenciaSalud.csproj.CopyComplete
+C:\Users\Salud\source\repos\Sln_AsistenciaSalud\AsistenciaSalud\obj\Debug\AsistenciaSalud.Forms.SeleccionarClue.resources
+C:\Users\MARIO\source\repos\Sln_AsistenciaSalud\AsistenciaSalud\obj\Debug\AsistenciaSalud.csprojAssemblyReference.cache
+C:\Users\MARIO\source\repos\Sln_AsistenciaSalud\AsistenciaSalud\obj\Debug\AsistenciaSalud.csproj.ResolveComReference.cache
+C:\Users\MARIO\source\repos\Sln_AsistenciaSalud\AsistenciaSalud\obj\Debug\AsistenciaSalud.AdministradorRelojes.resources
+C:\Users\MARIO\source\repos\Sln_AsistenciaSalud\AsistenciaSalud\obj\Debug\AsistenciaSalud.AsignacionPermisoUsuarios.resources
+C:\Users\MARIO\source\repos\Sln_AsistenciaSalud\AsistenciaSalud\obj\Debug\AsistenciaSalud.Clues.resources
+C:\Users\MARIO\source\repos\Sln_AsistenciaSalud\AsistenciaSalud\obj\Debug\AsistenciaSalud.fom_message.filtro_form.resources
+C:\Users\MARIO\source\repos\Sln_AsistenciaSalud\AsistenciaSalud\obj\Debug\AsistenciaSalud.Forms.SeleccionarClue.resources
+C:\Users\MARIO\source\repos\Sln_AsistenciaSalud\AsistenciaSalud\obj\Debug\AsistenciaSalud.Form_Login.resources
+C:\Users\MARIO\source\repos\Sln_AsistenciaSalud\AsistenciaSalud\obj\Debug\AsistenciaSalud.Permisos.resources
+C:\Users\MARIO\source\repos\Sln_AsistenciaSalud\AsistenciaSalud\obj\Debug\AsistenciaSalud.Principal.resources
+C:\Users\MARIO\source\repos\Sln_AsistenciaSalud\AsistenciaSalud\obj\Debug\AsistenciaSalud.Properties.Resources.resources
+C:\Users\MARIO\source\repos\Sln_AsistenciaSalud\AsistenciaSalud\obj\Debug\AsistenciaSalud.SeleccionarClue.resources
+C:\Users\MARIO\source\repos\Sln_AsistenciaSalud\AsistenciaSalud\obj\Debug\AsistenciaSalud.Usuarios.resources
+C:\Users\MARIO\source\repos\Sln_AsistenciaSalud\AsistenciaSalud\obj\Debug\AsistenciaSalud.csproj.GenerateResource.cache
+C:\Users\MARIO\source\repos\Sln_AsistenciaSalud\AsistenciaSalud\obj\Debug\AsistenciaSalud.csproj.CoreCompileInputs.cache
+C:\Users\MARIO\source\repos\Sln_AsistenciaSalud\AsistenciaSalud\obj\Debug\AsistenciaSalud.exe
+C:\Users\MARIO\source\repos\Sln_AsistenciaSalud\AsistenciaSalud\obj\Debug\AsistenciaSalud.pdb
+C:\Users\MARIO\source\repos\Sln_AsistenciaSalud\AsistenciaSalud\bin\Debug\AsistenciaSalud.exe.config
+C:\Users\MARIO\source\repos\Sln_AsistenciaSalud\AsistenciaSalud\bin\Debug\AsistenciaSalud.exe
+C:\Users\MARIO\source\repos\Sln_AsistenciaSalud\AsistenciaSalud\bin\Debug\AsistenciaSalud.pdb
+C:\Users\MARIO\source\repos\Sln_AsistenciaSalud\AsistenciaSalud\bin\Debug\MetroFramework.Design.dll
+C:\Users\MARIO\source\repos\Sln_AsistenciaSalud\AsistenciaSalud\bin\Debug\MetroFramework.dll
+C:\Users\MARIO\source\repos\Sln_AsistenciaSalud\AsistenciaSalud\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\MARIO\source\repos\Sln_AsistenciaSalud\AsistenciaSalud\obj\Debug\Interop.zkemkeeper.dll
+C:\Users\MARIO\source\repos\Sln_AsistenciaSalud\AsistenciaSalud\obj\Debug\AsistenciaSalud.csproj.CopyComplete
+C:\Users\Salud\source\repos\Sln_AsistenciaSalud\AsistenciaSalud\obj\Debug\AsistenciaSalud.Forms.Faltas.resources
