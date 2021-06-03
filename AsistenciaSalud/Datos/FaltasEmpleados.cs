@@ -33,6 +33,7 @@ namespace AsistenciaSalud.Datos
                 command.CommandType = CommandType.StoredProcedure;
 
                 command.Parameters.AddWithValue("@tipo_trabajador", "416");
+                command.Parameters.AddWithValue("@clues_trabajador", "'CSSSA017213', 'CSSSA007540'");
                 
                 using (SqlDataReader reader = command.ExecuteReader())
                 {
