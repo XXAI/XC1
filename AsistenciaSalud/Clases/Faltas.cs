@@ -13,14 +13,27 @@ namespace AsistenciaSalud.Clases
 
     class Empleado
     {
-        string nombre { get; set; }
-        string apellido_paterno { get; set; }
-        string apellido_materno { get; set; }
-        string rfc { get; set; }
-        string curp { get; set; }
-        string num_empleado { get; set; }
-        List<Horario> horario { get; set; }
-        List<Incidencias> incidencia { get; set; }
+        public long id { get; set; }
+        public string nombre { get; set; }
+        public string apellido_paterno { get; set; }
+        public string apellido_materno { get; set; }
+        public string rfc { get; set; }
+        public string curp { get; set; }
+        public string num_empleado { get; set; }
+        public string ur { get; set; }
+        public string codigo { get; set; }
+        public string clues { get; set; }
+        public string cr { get; set; }
+        public string fecha_ingreso { get; set; }
+        public string fecha_ingreso_federal { get; set; }
+        public List<Horario> horario { get; set; }
+        public List<Incidencias> incidencia { get; set; }
+        public List<Checadas> checadas { get; set; }
+    }
+
+    class Checadas
+    {
+        public string registroChecada { get; set; }
     }
 
     class Horario

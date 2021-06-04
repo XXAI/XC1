@@ -79,8 +79,23 @@ namespace AsistenciaSalud.Forms
 
             Datos.FaltasEmpleados lista = new Datos.FaltasEmpleados(this._Conexion);
             dataGridFaltas.Clear();
-            dataGridFaltas = lista.ConsultarUsuario(this.dataGridFaltas, 2021, 1);
+            List<Clases.Empleado> empleados = new List<Clases.Empleado>();
+            empleados = lista.ConsultarUsuario(this.dataGridFaltas, 2021, 1);
             
+            for(int i = 0; i < empleados.Count; i++)
+            {
+                DataRow row_local = dataGridFaltas.NewRow();
+                row_local["AÑO"] = "2021";
+                row_local["MES"] = "ENERO";
+                row_local["NOMBRE"] = empleados[i].nombre + " " + empleados[i].apellido_paterno + " " + empleados[i].apellido_materno;
+                row_local["RFC"] = empleados[i].rfc;
+                //Console.WriteLine(reader.GetString(5).ToString());
+                dataGridFaltas.Rows.Add(row_local);
+            }
+            //this.dataGridFaltas.ro
+            //empleados = lista.ConsultarUsuario( 2021, 1);
+            //dataGridFaltas = lista.ConsultarUsuario(this.dataGridFaltas, 2021, 1);
+
         }
     }
 }
