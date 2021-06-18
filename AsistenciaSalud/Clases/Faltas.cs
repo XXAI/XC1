@@ -48,6 +48,19 @@ namespace AsistenciaSalud.Clases
     
     class Reglas
     {
+        public long empleado_id { get; set; }
+        public string horario_id { get; set; }
+        public string orden { get; set; }
+        public Int32 dia_inicio { get; set; }
+        public Int32 dia_fin { get; set; }
+        public string hora_inicio { get; set; }
+        public string hora_fin { get; set; }
+        public Int32 min_tarde { get; set; }
+        public Int32 min_temprano { get; set; }
+        public string entrada_desde { get; set; }
+        public string entrada_hasta { get; set; }
+        public string salida_desde { get; set; }
+        public string salida_hasta { get; set; }
 
     }
 
