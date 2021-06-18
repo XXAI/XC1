@@ -33,11 +33,16 @@ namespace AsistenciaSalud.Clases
 
     class Checadas
     {
+        public long empleado_id { get; set; }
         public string registroChecada { get; set; }
     }
 
     class Horario
     {
+        public long empleado_id { get; set; }
+        public string fecha_inicial { get; set; }
+        public string fecha_final { get; set; }
+        public string nombre { get; set; }
         List<Reglas> Reglas { get; set; }
     }
     
