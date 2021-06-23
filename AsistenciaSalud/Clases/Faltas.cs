@@ -29,6 +29,14 @@ namespace AsistenciaSalud.Clases
         public List<Horario> horario { get; set; }
         public List<Incidencias> incidencia { get; set; }
         public List<Checadas> checadas { get; set; }
+        public List<Registros> registros { get; set; }
+    }
+
+
+    class Registros
+    {
+        public long dia { get; set; }
+        public string letra { get; set; }
     }
 
     class Checadas
@@ -40,27 +48,30 @@ namespace AsistenciaSalud.Clases
     class Horario
     {
         public long empleado_id { get; set; }
+        public Int32 horario_id { get; set; }
         public string fecha_inicial { get; set; }
         public string fecha_final { get; set; }
         public string nombre { get; set; }
-        List<Reglas> Reglas { get; set; }
+        public List<Reglas> reglas { get; set; }
     }
     
     class Reglas
     {
         public long empleado_id { get; set; }
-        public string horario_id { get; set; }
-        public string orden { get; set; }
-        public Int32 dia_inicio { get; set; }
-        public Int32 dia_fin { get; set; }
-        public string hora_inicio { get; set; }
-        public string hora_fin { get; set; }
+        public Int32 horario_id { get; set; }
+        public string fecha_inicial { get; set; }
+        public string fecha_final { get; set; }
+        public Int32 orden { get; set; }
+        public Int16 dia_inicio { get; set; }
+        public Int16 dia_fin { get; set; }
+        public TimeSpan hora_inicio { get; set; }
+        public TimeSpan hora_fin { get; set; }
         public Int32 min_tarde { get; set; }
         public Int32 min_temprano { get; set; }
-        public string entrada_desde { get; set; }
-        public string entrada_hasta { get; set; }
-        public string salida_desde { get; set; }
-        public string salida_hasta { get; set; }
+        public TimeSpan entrada_desde { get; set; }
+        public TimeSpan entrada_hasta { get; set; }
+        public TimeSpan salida_desde { get; set; }
+        public TimeSpan salida_hasta { get; set; }
 
     }
 

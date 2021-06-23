@@ -13,7 +13,7 @@ namespace AsistenciaSalud.Forms
 {
     public partial class Faltas : MetroFramework.Forms.MetroForm
     {
-        Clases.Usuario _Usuario;
+
         DataTable dataGridFaltas = new DataTable(); //Grid Faltas
         SqlConnection _Conexion;
 
@@ -72,29 +72,44 @@ namespace AsistenciaSalud.Forms
 
         }
 
-        private void btn_buscar_Click(object sender, EventArgs e)
+        private async void btn_buscar_Click(object sender, EventArgs e)
         {
-            Datos.DatosMaestro consultar = new Datos.DatosMaestro();
-            this._Conexion = consultar.DatosConexion("Mario");
-
-            Datos.FaltasEmpleados lista = new Datos.FaltasEmpleados(this._Conexion);
-            dataGridFaltas.Clear();
-            List<Clases.Empleado> empleados = new List<Clases.Empleado>();
-            empleados = lista.ConsultarUsuario(this.dataGridFaltas, 2021, 1);
-            
-            for(int i = 0; i < empleados.Count; i++)
+            try
             {
-                DataRow row_local = dataGridFaltas.NewRow();
-                row_local["AÑO"] = "2021";
-                row_local["MES"] = "ENERO";
-                row_local["NOMBRE"] = empleados[i].nombre + " " + empleados[i].apellido_paterno + " " + empleados[i].apellido_materno;
-                row_local["RFC"] = empleados[i].rfc;
-                //Console.WriteLine(reader.GetString(5).ToString());
-                dataGridFaltas.Rows.Add(row_local);
+                Datos.DatosMaestro consultar = new Datos.DatosMaestro();
+                this._Conexion = consultar.DatosConexion("Mario");
+
+                Datos.FaltasEmpleados lista = new Datos.FaltasEmpleados(this._Conexion);
+                dataGridFaltas.Clear();
+                List<Clases.Empleado> empleados = new List<Clases.Empleado>();
+                empleados = await lista.ConsultarUsuario(this.dataGridFaltas, 2021, 1);
+                //Console.WriteLine(empleados.Count);
+                
+                
+                foreach(var Empleados in empleados)
+                {
+                    DataRow row_local = dataGridFaltas.NewRow();
+                    row_local["AÑO"] = "2021";
+                    row_local["MES"] = "ENERO";
+                    row_local["NOMBRE"] = Empleados.nombre + " " + Empleados.apellido_paterno + " " + Empleados.apellido_materno;
+                    row_local["RFC"] = Empleados.rfc;
+
+                    //Console.WriteLine(Empleados.registros.Count());
+                    int index = 0;
+                    foreach(var registro in Empleados.registros)
+                    {
+                        row_local[index + 4] = registro.letra;
+                        index++;
+                    }
+                    dataGridFaltas.Rows.Add(row_local);
+                }
+
+                
+            }catch(Exception Ex)
+            {
+                Console.WriteLine(Ex.Message);
             }
-            //this.dataGridFaltas.ro
-            //empleados = lista.ConsultarUsuario( 2021, 1);
-            //dataGridFaltas = lista.ConsultarUsuario(this.dataGridFaltas, 2021, 1);
+           
 
         }
     }

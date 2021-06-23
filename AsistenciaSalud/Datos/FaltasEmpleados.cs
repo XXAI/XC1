@@ -18,7 +18,7 @@ namespace AsistenciaSalud.Datos
             
         }
 
-        public List<Clases.Empleado> ConsultarUsuario(DataTable listaEmpleados, int anio, int mes)
+        public async Task<List<Clases.Empleado>> ConsultarUsuario(DataTable listaEmpleados, int anio, int mes)
         {
             this.conexion.Open();
             //Console.WriteLine(this.conexion.State);
@@ -67,7 +67,8 @@ namespace AsistenciaSalud.Datos
                         reader.Close();
                     }
                     command.Dispose();
-                } 
+                }
+                Console.WriteLine("empleado");
 
                 SqlCommand cmd = new SqlCommand();
                 string fecha_inicial = "2021-01-01";
@@ -76,7 +77,7 @@ namespace AsistenciaSalud.Datos
                 cmd.CommandText = "SELECT e.id, ea.fecha_hora " +
                     "from empleados e, empleados_nomina en, empleado_asistencia ea " +
                     "where e.rfc= en.rfc and e.id=ea.empleado_id and ea.fecha_hora BETWEEN '" + fecha_inicial + "' and '" + fecha_final + "'" +
-                    "and en.clues in ('"+ listaClues + "') order by e.id, ea.fecha_hora" ;
+                    "and en.clues in ('"+ listaClues + "')  order by e.id, ea.fecha_hora" ;
 
                 cmd.CommandType = CommandType.Text;
                 cmd.Connection = this.conexion;
@@ -91,31 +92,14 @@ namespace AsistenciaSalud.Datos
                     _checadas.registroChecada = dr.GetDateTime(1).ToString("yyyy-MM-dd");
                     checadas.Add(_checadas);                    
                 }
+                Console.WriteLine("checadas");
 
                 dr.Close();
                 cmd.Dispose();
                 
-                for (int k = 0; k < _empleado.Count(); k++)
-                {
-                    var listaAsistencia = checadas.Where(item => item.empleado_id == _empleado[k].id).Select(item => item.registroChecada);
-                    if(listaAsistencia.Count() > 0)
-                    {
-                        List<Clases.Checadas> registroChecadas = new List<Clases.Checadas>();
-                        foreach (var registro in listaAsistencia)
-                        {
-                            Clases.Checadas _registroChecadas = new Clases.Checadas();
-                            _registroChecadas.empleado_id = _empleado[k].id;
-                            _registroChecadas.registroChecada = registro;
-                            registroChecadas.Add(_registroChecadas);
-                        }
-
-                        _empleado[k].checadas = registroChecadas;
-                    }
-                }
-
                 /*REGISTRAR LOS HORARIOS*/
                 SqlCommand cmd_horario = new SqlCommand();
-                string query = "SELECT reh.empleado_id, reh.fecha_inicial, reh.fecha_final, ch.descripcion from rel_empleado_horario reh, catalogo_horarios ch " +
+                string query = "SELECT  reh.empleado_id, reh.horario_id, reh.fecha_inicial, reh.fecha_final, ch.descripcion from rel_empleado_horario reh, catalogo_horarios ch " +
                                             "where reh.horario_id = ch.id " +
                                             "and reh.fecha_inicial <= '" + fecha_inicial + "' and reh.fecha_final >= '" + fecha_final + "'";
 
@@ -132,11 +116,13 @@ namespace AsistenciaSalud.Datos
                 {
                     Clases.Horario _horario = new Clases.Horario();
                     _horario.empleado_id = long.Parse(lector_horario.GetInt32(0).ToString());
-                    _horario.fecha_inicial = lector_horario.GetDateTime(1).ToString("yyyy-MM-dd");
-                    _horario.fecha_final = lector_horario.GetDateTime(2).ToString("yyyy-MM-dd");
-                    _horario.nombre = lector_horario.GetString(3).ToString();
+                    _horario.horario_id = lector_horario.GetInt32(1);
+                    _horario.fecha_inicial = lector_horario.GetDateTime(2).ToString("yyyy-MM-dd");
+                    _horario.fecha_final = lector_horario.GetDateTime(3).ToString("yyyy-MM-dd");
+                    _horario.nombre = lector_horario.GetString(4).ToString();
                     horarios.Add(_horario);
                 }
+                Console.WriteLine("horarios");
                 //_empleado[k].horario = horarios;
                 lector_horario.Close();
                 cmd_horario.Dispose();
@@ -144,12 +130,12 @@ namespace AsistenciaSalud.Datos
 
                 /*REGISTRAR LAS REGLAS*/
                 SqlCommand cmd_reglas = new SqlCommand();
-                string query_reglas = "SELECT reh.empleado_id, reh.horario_id, reh.orden, rhd.dia_inicio, rhd.dia_fin, rhr.hora_inicio, rhr.hora_fin, rhr.min_tarde, rhr.min_temprano, rhr.entrada_desde, rhr.entrada_hasta, " +
+                string query_reglas = "SELECT reh.empleado_id, reh.horario_id,  reh.fecha_inicial, reh.fecha_final, reh.orden, rhd.dia_inicio, rhd.dia_fin, rhr.hora_inicio, rhr.hora_fin, rhr.min_tarde, rhr.min_temprano, rhr.entrada_desde, rhr.entrada_hasta, " +
                                         "rhr.salida_desde, rhr.salida_hasta, rhr.dias_trabajo, rhr.min_trabajo from rel_empleado_horario reh, rel_horario_dias rhd, rel_horario_reglas rhr " +
-                                        "where rhd.rel_horario_regla_id = rhr.id and reh.horario_id = rhd.horario_id reh.fecha_inicial <= '" + fecha_inicial + "' and reh.fecha_final >= '" + fecha_final + "'" +
-                                        "order by reh.empleado_id, reh.fecha_inicial, reh.horario_id, reh.orden ";
+                                        "where rhd.rel_horario_regla_id = rhr.id and reh.horario_id = rhd.horario_id and reh.fecha_inicial <= '" + fecha_inicial + "' and reh.fecha_final >= '" + fecha_final + "'" +
+                                        " order by reh.empleado_id, reh.fecha_inicial, reh.horario_id, reh.orden ";
 
-
+                //Console.WriteLine(query_reglas);
                 cmd_reglas.CommandText = query_reglas;
                 cmd_reglas.CommandType = CommandType.Text;
                 cmd_reglas.Connection = this.conexion;
@@ -161,47 +147,38 @@ namespace AsistenciaSalud.Datos
                 while (lector_reglas.Read())
                 {
                     Clases.Reglas _reglas = new Clases.Reglas();
-                    _reglas.empleado_id = long.Parse(lector_horario.GetInt32(0).ToString());
-                    _reglas.horario_id = lector_horario.GetString(1);
-                    _reglas.orden = lector_horario.GetString(2);
-                    _reglas.dia_inicio = lector_horario.GetInt32(3);
-                    _reglas.dia_fin = lector_horario.GetInt32(4);
-                    _reglas.hora_inicio = lector_horario.GetString(5);
-                    _reglas.hora_fin = lector_horario.GetString(6);
-                    _reglas.min_tarde = lector_horario.GetInt32(7);
-                    _reglas.min_temprano = lector_horario.GetInt32(8);
-                    _reglas.entrada_desde = lector_horario.GetString(9);
-                    _reglas.entrada_hasta = lector_horario.GetString(10);
-                    _reglas.salida_desde = lector_horario.GetString(11);
-                    _reglas.salida_hasta = lector_horario.GetString(12);
+                    _reglas.empleado_id = long.Parse(lector_reglas.GetInt32(0).ToString());
+                    _reglas.horario_id = lector_reglas.GetInt32(1);
+                   
+
+                    _reglas.fecha_inicial = lector_reglas.GetDateTime(2).ToString("yyyy-MM-dd");
+                    _reglas.fecha_final = lector_reglas.GetDateTime(3).ToString("yyyy-MM-dd");
+                    _reglas.orden = lector_reglas.GetInt32(4);
+                    _reglas.dia_inicio = lector_reglas.GetInt16(5);
+                    _reglas.dia_fin = lector_reglas.GetInt16(6);
+                    _reglas.hora_inicio = lector_reglas.GetTimeSpan(7);
+                    _reglas.hora_fin = lector_reglas.GetTimeSpan(8);
+                    _reglas.min_tarde = lector_reglas.GetInt32(9);
+                    _reglas.min_temprano = lector_reglas.GetInt32(10);
+                    _reglas.entrada_desde = lector_reglas.GetTimeSpan(11);
+                    _reglas.entrada_hasta = lector_reglas.GetTimeSpan(12);
+                    _reglas.salida_desde = lector_reglas.GetTimeSpan(13);
+                    _reglas.salida_hasta = lector_reglas.GetTimeSpan(14);
 
                     reglas.Add(_reglas);
                 }
+                Console.WriteLine("reglas");
                 //_empleado[k].horario = horarios;
                 lector_reglas.Close();
                 cmd_reglas.Dispose();
+                
+               
                 /**/
 
-
-
-
-                /*cmd.CommandType = CommandType.Text;
-                cmd.Connection = this.conexion;
-                SqlDataReader dr = cmd.ExecuteReader();
-
-                List<Clases.Checadas> checadas = new List<Clases.Checadas>();
-
-                while (dr.Read())
-                {
-                    Clases.Checadas _checadas = new Clases.Checadas();
-                    _checadas.empleado_id = long.Parse(dr.GetInt32(0).ToString());
-                    _checadas.registroChecada = dr.GetDateTime(1).ToString("yyyy-MM-dd");
-                    checadas.Add(_checadas);
-                }
-
+                /*Reindexar los indices*/
                 for (int k = 0; k < _empleado.Count(); k++)
                 {
-                    var listaAsistencia = checadas.Where(item => item.empleado_id == _empleado[k].id).Select(item => item.registroChecada);
+                    /*var listaAsistencia = checadas.Where(item => item.empleado_id == _empleado[k].id).Select(item => item.registroChecada);
                     if (listaAsistencia.Count() > 0)
                     {
                         List<Clases.Checadas> registroChecadas = new List<Clases.Checadas>();
@@ -214,23 +191,152 @@ namespace AsistenciaSalud.Datos
                         }
 
                         _empleado[k].checadas = registroChecadas;
+                    }*/
+
+                    
+                    var listahorario = horarios.Where(item => item.empleado_id == _empleado[k].id);
+
+                    List<Clases.Horario> registroHorarios = new List<Clases.Horario>();
+                    _empleado[k].horario = registroHorarios;
+
+                    if (listahorario.Count() > 0)
+                    {
+                        
+                        foreach (var horario in listahorario)
+                        {
+                            Clases.Horario _horario = new Clases.Horario();
+                            _horario.empleado_id = _empleado[k].id;
+                            _horario.fecha_inicial = horario.fecha_inicial;
+                            _horario.fecha_final = horario.fecha_final;
+                            _horario.nombre = horario.nombre;
+                            
+
+                            //se agregan reglas
+                            var listareglas = reglas.Where(item => item.empleado_id == _empleado[k].id).Where(item => item.horario_id == horario.horario_id).Where(item => item.fecha_inicial == horario.fecha_inicial);
+                            if(listareglas.Count() > 0)
+                            {
+                                _horario.reglas = listareglas.ToList();
+                            }
+                            registroHorarios.Add(_horario);
+                     
+                        }
+
+                        _empleado[k].horario = registroHorarios;
                     }
+                    /*Console.WriteLine(_empleado[k].horario.Count);
+                    Console.WriteLine(_empleado[k].horario[0].reglas.Count);
+                    foreach(var x in _empleado[k].horario[0].reglas)
+                    {
+                        Console.WriteLine(x.dia_inicio);
+                    }*/
+
                 }
-
-                dr.Close();
-                cmd.Dispose();*/
-
+                /**/
+                Console.WriteLine("asignacion");
+                _empleado = await verificarFaltas(_empleado, fecha_inicial, fecha_final);
+              
                 this.conexion.Dispose();
                 return _empleado;
             }
             catch (Exception e)
             {
-                Console.WriteLine(e.Message);
+                Console.WriteLine(e.Data);
+                //return _empleado;
                 throw e;
 
             }
         }
 
+        public async Task<List<Clases.Empleado>> verificarFaltas(List<Clases.Empleado> _empleado, string fecha_inicial, string fecha_final)
+        {
+            DateTime fechaPivote = DateTime.Parse(fecha_inicial);
+            DateTime fechaInicial = DateTime.Parse(fecha_inicial);
+            DateTime fechaFinal = DateTime.Parse(fecha_final);
+            int dias_diferencia = (fechaFinal - fechaInicial).Days;
+            
+            int indice = 0;
+
+            //Console.WriteLine(_empleado.Count());
+            try
+            {
+                foreach (var empleados in _empleado)
+                {
+                    int bandera_dias = 0;
+                    Clases.Horario horario_trabajador = new Clases.Horario();
+                    List<Clases.Registros> registrosTrabajador = new List<Clases.Registros>();
+                    int dia = 1;
+                    while ((fechaFinal - fechaInicial).Days >= 0)
+                    {
+                        //Console.WriteLine((byte)fechaInicial.DayOfWeek);
+                        byte numerodia = (byte)fechaInicial.DayOfWeek;
+                        if(numerodia == 0)
+                        {
+                            numerodia = 7;
+                        }
+                        if (bandera_dias == 0)
+                        {
+                            if(empleados.horario.Count() > 0)
+                            {
+                                var horario = empleados.horario.Where(item => DateTime.Parse(item.fecha_inicial) <= fechaInicial).Where(item => DateTime.Parse(item.fecha_final) >= fechaFinal).Take(1);
+                                if (horario.Count() == 1)
+                                {
+                                    horario_trabajador = horario.Single();
+                                    //Console.WriteLine("reglas"+horario_trabajador.reglas.Count());
+                                    bandera_dias = (DateTime.Parse(horario_trabajador.fecha_final) - fechaInicial).Days;
+                                }
+                            }
+                        }
+                        
+
+                        //Revisar los registros
+                        Clases.Registros registro = new Clases.Registros();
+                        registro.dia = dia;
+
+                        
+                        if(empleados.horario.Count() > 0)
+                        {
+                            if (horario_trabajador.reglas != null)
+                            {
+                                var regla = horario_trabajador.reglas.Where(item => item.dia_inicio == numerodia).Take(1);
+                                if (regla.Count() > 0)
+                                {
+                                    registro.letra = "A";
+                                }
+                                else
+                                {
+                                    registro.letra = "";
+                                }
+                            }
+                            else
+                            {
+                                registro.letra = "S/R";
+                            }
+                        }
+                        else
+                        {
+                            registro.letra = "S/H";
+                        }
+                        
+                        //registro.letra = "F";
+                        registrosTrabajador.Add(registro);
+                        //
+
+                        fechaInicial = fechaInicial.AddDays(1);
+                        bandera_dias--;
+                        dia++;
+                    }
+                    _empleado[indice].registros = registrosTrabajador;
+                    
+                    fechaInicial = fechaPivote;
+                    indice++;
+
+                }
+            }catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message+" - "+ex.StackTrace);
+            }
+            return _empleado;
+        }
         
     }
 }
